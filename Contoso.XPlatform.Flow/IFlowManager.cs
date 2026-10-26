@@ -3,6 +3,7 @@ using Contoso.XPlatform.Flow.Cache;
 using Contoso.XPlatform.Flow.Requests;
 using Contoso.XPlatform.Flow.Settings;
 using LogicBuilder.RulesDirector;
+using System;
 using System.Threading.Tasks;
 
 namespace Contoso.XPlatform.Flow
@@ -12,11 +13,9 @@ namespace Contoso.XPlatform.Flow
         Progress Progress { get; }
         DirectorBase Director { get; }
         FlowDataCache FlowDataCache { get; }
-        FlowState FlowState { get; set; }
-        IDialogFunctions DialogFunctions { get; }
-        IActions Actions { get; }
         IFlowActivity FlowActivity { get; }
-        IMapper Mapper { get; }
+        IRulesCache RulesCache { get; }
+        IServiceProvider ServiceProvider { get; }
 
         Task<FlowSettings> Start(string module);
         Task<FlowSettings> Next(CommandButtonRequest request);

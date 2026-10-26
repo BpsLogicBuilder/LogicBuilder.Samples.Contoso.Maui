@@ -102,7 +102,7 @@ namespace Contoso.XPlatform.Services
 
         public void CopyFlowItems()
         {
-            this.FlowManager.FlowState = uiNotificationService.FlowSettings!.FlowState;/*FlowSettings not null here*/
+            ((Director)this.FlowManager.Director).FlowState = uiNotificationService.FlowSettings!.FlowState;/*FlowSettings not null here*/
             this.FlowManager.FlowDataCache.PersistentKeys = [.. uiNotificationService.FlowSettings.FlowDataCache.PersistentKeys];
             this.FlowManager.FlowDataCache.Items = new Dictionary<string, object>(uiNotificationService.FlowSettings.FlowDataCache.Items);
             this.FlowManager.FlowDataCache.NavigationBar = new NavigationBarDescriptor

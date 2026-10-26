@@ -5,17 +5,16 @@ using System.Linq;
 
 namespace Contoso.XPlatform.Flow
 {
-    public class Director(IFlowManager flowManager, IRulesCache rulesCache) : AppDirectorBase
+    public class Director(IFlowManager flowManager) : AppDirectorBase
     {
 
         #region Fields
         private readonly IFlowManager _flowManager = flowManager;
-        private readonly IRulesCache _rulesCache = rulesCache;
         #endregion Fields
 
         #region Properties
         protected override Progress Progress => this._flowManager.Progress;
-        protected override IRulesCache RulesCache => this._rulesCache;
+        protected override IRulesCache RulesCache => _flowManager.RulesCache;
         protected override IFlowActivity FlowActivity => this._flowManager.FlowActivity;
 
         public FlowState FlowState

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Contoso.XPlatform.Flow.Cache;
+using Contoso.XPlatform.Flow.Factories;
 using Contoso.XPlatform.Flow.Requests;
 using Contoso.XPlatform.Flow.Settings;
 using Contoso.XPlatform.Flow.Settings.Screen;
@@ -19,21 +20,20 @@ namespace Contoso.XPlatform.Flow
     {
         public FlowManager(ScreenData screenData,
             IAppLogger appLogger,
-            DirectorFactory directorFactory,
             FlowDataCache flowDataCache,
-            IActions actions,
-            IDialogFunctions dialogFunctions,
-            FlowActivityFactory flowActivityFactory,
-            IMapper mapper)
+            IFlowFactory flowFactory,
+            Progress progress,
+            IRulesCache rulesCache,
+            IServiceProvider serviceProvider)
         {
             this.screenData = screenData;
             this.appLogger = appLogger;
-            this.Director = directorFactory.Create(this);
             this.FlowDataCache = flowDataCache;
-            this.Actions = actions;
-            this.DialogFunctions = dialogFunctions;
-            this.FlowActivity = flowActivityFactory.Create(this);
-            this.Mapper = mapper;
+            Progress = progress;
+            this.RulesCache = rulesCache;
+            this.ServiceProvider = serviceProvider;
+            Director = flowFactory.GetDirector(this);
+            FlowActivity = flowFactory.GetFlowActivity(this);
         }
 
         #region Fields
@@ -42,27 +42,23 @@ namespace Contoso.XPlatform.Flow
         #endregion Fields
 
         #region Properties
-        public Progress Progress { get; } = new Progress();
+        public Progress Progress { get; }
         public DirectorBase Director { get; }
         public FlowDataCache FlowDataCache { get; }
-        public IActions Actions { get; }
-        public IDialogFunctions DialogFunctions { get; }
         public IFlowActivity FlowActivity { get; }
-        public IMapper Mapper { get; }
+        public IRulesCache RulesCache { get; }
+        public IServiceProvider ServiceProvider { get; }
 
         private FlowSettings FlowSettings
             => new
             (
-                FlowState,
+                ((Director)this.Director).FlowState,
                 FlowDataCache,
                 screenData.ScreenSettings ?? throw new InvalidOperationException("ScreenSettings cannot be null")
             );
 
-        public FlowState FlowState
-        {
-            get => ((Director)this.Director).FlowState;
-            set => ((Director)this.Director).FlowState = value;
-        }
+        
+
         #endregion Properties
 
         #region Methods
@@ -149,7 +145,7 @@ namespace Contoso.XPlatform.Flow
         private FlowSettings GetFlowSettings(Exception ex) 
             => new 
             (
-                FlowState,
+                ((Director)this.Director).FlowState,
                 FlowDataCache,
                 new ScreenSettings<TextFormSettingsDescriptor>
                 (
