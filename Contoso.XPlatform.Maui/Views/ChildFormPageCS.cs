@@ -1,4 +1,5 @@
 ﻿using Contoso.XPlatform.Constants;
+using Contoso.XPlatform.Converters;
 using Contoso.XPlatform.Utils;
 using Contoso.XPlatform.ViewModels;
 using Contoso.XPlatform.ViewModels.Validatables;
@@ -13,7 +14,7 @@ namespace Contoso.XPlatform.Views
 {
     public partial class ChildFormPageCS : ContentPage
     {
-        public ChildFormPageCS(IValidatable formValidatable)
+        public ChildFormPageCS(IValidatable formValidatable, IConverterFactory converterFactory)
         {
             this.formValidatable = formValidatable;
             this.formLayout = (EditFormLayout)
@@ -82,7 +83,7 @@ namespace Contoso.XPlatform.Views
                                                     BindingContext = controlBox
                                                 }
                                                 .AddBinding(BindableLayout.ItemsSourceProperty, new Binding("."))
-                                                .SetDataTemplateSelector(EditFormViewHelpers.QuestionTemplateSelector)
+                                                .SetDataTemplateSelector(EditFormViewHelpers.GetQuestionTemplateSelector(converterFactory))
                                             );
 
                                             return stackLayout;

@@ -25,7 +25,7 @@ namespace Contoso.Domain.Entities
 
         public string CourseIDString { get; set; } = "";
 
-        private string _title;
+        private string _title = "";
         [VariableEditorControl(VariableControlType.SingleLineTextBox)]
         [AlsoKnownAs("Course_Title")]
         public string Title

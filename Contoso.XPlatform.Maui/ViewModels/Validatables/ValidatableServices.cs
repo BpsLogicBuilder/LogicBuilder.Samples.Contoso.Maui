@@ -16,11 +16,15 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
+#pragma warning disable IDE0130 // Microsoft recommended namespace for service registrations
 namespace Microsoft.Extensions.DependencyInjection
+#pragma warning restore IDE0130 // Microsoft recommended namespace for service registrations
 {
     internal static class ValidatableServices
     {
-        internal static IServiceCollection AddValidatableServices(this IServiceCollection services) 
+#pragma warning disable S3776 //drvice registrations
+        internal static IServiceCollection AddValidatableServices(this IServiceCollection services)
+#pragma warning restore S3776 //drvice registrations
             => services
                 .AddTransient<Func<Type, List<IFormItemSettingsDescriptor>, IFormGroupBoxSettings, Dictionary<string, List<ValidationRuleDescriptor>>, EditFormLayout?, string?, IFieldsCollectionBuilder>>
                 (
@@ -73,7 +77,7 @@ namespace Microsoft.Extensions.DependencyInjection
                                 name,
                                 templateName,
                                 label,
-                                validations ?? Array.Empty<IValidationRule>()
+                                validations ?? []
                             );
                         }
                         else if (templateName == nameof(QuestionTemplateSelector.SwitchTemplate))
@@ -84,7 +88,7 @@ namespace Microsoft.Extensions.DependencyInjection
                                 name,
                                 templateName,
                                 label,
-                                validations ?? Array.Empty<IValidationRule>()
+                                validations ?? []
                             );
                         }
 
@@ -102,13 +106,12 @@ namespace Microsoft.Extensions.DependencyInjection
                                 Activator.CreateInstance
                                 (
                                     typeof(DatePickerValidatableObject<>).MakeGenericType(fieldType),
-                                    new object[]
-                                    {
+                                    [
                                         provider.GetRequiredService<IUiNotificationService>(),
                                         name,
                                         templateName,
-                                        validations ?? Array.Empty<IValidationRule>()
-                                    }
+                                        validations ?? []
+                                    ]
                                 ) ?? throw new ArgumentException($"{fieldType}: {{966C7238-5435-4A7E-BF50-57284004AE61}}")
                             );
                         }
@@ -118,13 +121,12 @@ namespace Microsoft.Extensions.DependencyInjection
                                 Activator.CreateInstance
                                 (
                                     typeof(HiddenValidatableObject<>).MakeGenericType(fieldType),
-                                    new object[]
-                                    {
+                                    [
                                         provider.GetRequiredService<IUiNotificationService>(),
                                         name,
                                         templateName,
-                                        validations ?? Array.Empty<IValidationRule>()
-                                    }
+                                        validations ?? []
+                                    ]
                                 ) ?? throw new ArgumentException($"{fieldType}: {{EB232E08-F38C-49F8-B137-1C771316DA13}}")
                             );
                         }
@@ -144,15 +146,14 @@ namespace Microsoft.Extensions.DependencyInjection
                             Activator.CreateInstance
                             (
                                 typeof(EntryValidatableObject<>).MakeGenericType(fieldType),
-                                new object[]
-                                {
-                                        provider.GetRequiredService<IUiNotificationService>(),
-                                        name,
-                                        templateName,
-                                        placeholder,
-                                        stringFormat,
-                                        validations ?? Array.Empty<IValidationRule>()
-                                }
+                                [
+                                    provider.GetRequiredService<IUiNotificationService>(),
+                                    name,
+                                    templateName,
+                                    placeholder,
+                                    stringFormat,
+                                    validations ?? []
+                                ]
                             ) ?? throw new ArgumentException($"{fieldType}: {{D2EEDDEE-0124-4B83-B4D4-520F37626570}}")
                         );
                     }
@@ -179,7 +180,7 @@ namespace Microsoft.Extensions.DependencyInjection
                                 provider.GetRequiredService<IUiNotificationService>(),
                                 name,
                                 setting,
-                                validations ?? Array.Empty<IValidationRule>()
+                                validations ?? []
                             ) ?? throw new ArgumentException($"{setting.FormGroupTemplate.TemplateName}: {{3E474C92-1061-4222-929D-4C9A2C6B358F}}")
                         );
                     }
@@ -192,7 +193,7 @@ namespace Microsoft.Extensions.DependencyInjection
                         if (setting.FormGroupTemplate.TemplateName == nameof(QuestionTemplateSelector.PopupFormGroupTemplate)
                             || setting.FormGroupTemplate.TemplateName == nameof(QuestionTemplateSelector.FormGroupArrayTemplate))
                         {
-                            if (validatableObjectName == nameof(FormValidatableObject<string>))
+                            if (validatableObjectName == nameof(FormValidatableObject<>))
                             {
                                 return (IValidatable)(
                                     Activator.CreateInstance
@@ -210,7 +211,7 @@ namespace Microsoft.Extensions.DependencyInjection
                                     ) ?? throw new ArgumentException($"{setting.ModelType}: {{C9248FC9-AE9F-4B22-91D3-451664FFC4F8}}")
                                 );
                             }
-                            else if (validatableObjectName == nameof(AddFormValidatableObject<string>))
+                            else if (validatableObjectName == nameof(AddFormValidatableObject<>))
                             {
                                 return (IValidatable)(
                                     Activator.CreateInstance
@@ -255,7 +256,7 @@ namespace Microsoft.Extensions.DependencyInjection
                                 title,
                                 placeholder,
                                 stringFormat,
-                                validations ?? Array.Empty<IValidationRule>()
+                                validations ?? []
                             ) ?? throw new ArgumentException($"{fieldType}: {{891D329A-2CF5-4C7D-8AA9-924D060AA881}}")
                         );
                     }
@@ -281,7 +282,7 @@ namespace Microsoft.Extensions.DependencyInjection
                                 provider.GetRequiredService<IUiNotificationService>(),
                                 name,
                                 setting,
-                                validations ?? Array.Empty<IValidationRule>()
+                                validations ?? []
                             ) ?? throw new ArgumentException($"{setting.MultiSelectTemplate.ModelType}: {{225867FD-C54E-423D-BD87-A6A2954C824B}}")
                         );
                     }
@@ -302,7 +303,7 @@ namespace Microsoft.Extensions.DependencyInjection
                                 name,
                                 defaultValue,
                                 dropDownTemplate,
-                                validations ?? Array.Empty<IValidationRule>()
+                                validations ?? []
                             ) ?? throw new ArgumentException($"{fieldType}: {{79B782E6-21DD-4579-93DD-DC901D0D3CD8}}")
                         );
                     }

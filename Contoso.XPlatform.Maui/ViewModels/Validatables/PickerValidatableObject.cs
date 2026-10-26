@@ -20,7 +20,7 @@ using System.Windows.Input;
 
 namespace Contoso.XPlatform.ViewModels.Validatables
 {
-    public partial class PickerValidatableObject<T> : ValidatableObjectBase<T>, IHasItemsSourceValidatable
+    public partial class PickerValidatableObject<T> : ValidatableObjectBase<T>, IHasItemsSourceValidatable, IHasDropDownTemplate
     {
         public PickerValidatableObject(
             IServiceProvider serviceProvider,

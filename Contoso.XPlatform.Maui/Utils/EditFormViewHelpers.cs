@@ -40,7 +40,7 @@ namespace Contoso.XPlatform.Utils
             };
         }
 
-        public static QuestionTemplateSelector QuestionTemplateSelector { get; } = new QuestionTemplateSelector
+        public static QuestionTemplateSelector GetQuestionTemplateSelector(IConverterFactory converterFactory) => new()
         {
             TextTemplate = new DataTemplate
             (
@@ -48,7 +48,7 @@ namespace Contoso.XPlatform.Utils
                 {
                     Children =
                     {
-                        GetEntryForValidation(),
+                        GetEntryForValidation(converterFactory),
                         GetLabelForValidation()
                     }
                 }
@@ -72,7 +72,7 @@ namespace Contoso.XPlatform.Utils
                 {
                     Children =
                     {
-                        GetPasswordEntryForValidation(),
+                        GetPasswordEntryForValidation(converterFactory),
                         GetLabelForValidation()
                     }
                 }
@@ -120,7 +120,7 @@ namespace Contoso.XPlatform.Utils
                 {
                     Children =
                     {
-                        GetPickerForValidation(),
+                        GetPickerForValidation(converterFactory),
                         GetLabelForValidation()
                     }
                 }
@@ -223,7 +223,7 @@ namespace Contoso.XPlatform.Utils
                 }
             };
 
-        public static Picker GetPickerForValidation()
+        public static Picker GetPickerForValidation(IConverterFactory converterFactory)
         {
             Picker picker = new Picker()
             {
@@ -247,7 +247,7 @@ namespace Contoso.XPlatform.Utils
             picker.ItemDisplayBinding = new Binding
             (
                 path: ".",
-                converter: new PickerItemDisplayPathConverter(),
+                converter: converterFactory.CreatePickerItemDisplayPathConverter(),
                 converterParameter: picker
             );
 
@@ -356,25 +356,25 @@ namespace Contoso.XPlatform.Utils
                 new Binding(nameof(FormArrayValidatableObject<,>.DisplayText))
             );
 
-        public static Entry GetEntryForValidation(bool isPassword = false)
+        public static Entry GetEntryForValidation(IConverterFactory converterFactory, bool isPassword = false)
         {
             return AddBindingWithStringFormat(GetEntry(isPassword));
 
-            static Entry AddBindingWithStringFormat(Entry entry)
+            Entry AddBindingWithStringFormat(Entry entry)
                 => entry.AddBinding
                 (
                     Entry.TextProperty,
                     new Binding
                     (
                         path: nameof(EntryValidatableObject<>.Value),
-                        converter: new StringFormatConverter(),
+                        converter: converterFactory.CreateStringFormatConverter(),
                         converterParameter: entry
                     )
                 );
         }
 
-        public static Entry GetPasswordEntryForValidation()
-            => GetEntryForValidation(isPassword: true);
+        public static Entry GetPasswordEntryForValidation(IConverterFactory converterFactory)
+            => GetEntryForValidation(converterFactory, isPassword: true);
 
         public static Entry GetEntry(bool isPassword = false)
             => new Entry()

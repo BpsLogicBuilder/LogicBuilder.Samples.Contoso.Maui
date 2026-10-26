@@ -70,8 +70,8 @@ namespace Contoso.XPlatform
                 .AddFlowServices()
                 /*To use the extended splash (useful for low powered devices)
                  * 1) Comment out .AddRulesCache()
-                 * 2) In App.CreateWindow(), replace return new Microsoft.Maui.Controls.Window(ServiceProvider.GetRequiredService<MainPageView>()); 
-                 *          with return new Microsoft.Maui.Controls.Window(App.ServiceProvider.GetRequiredService<ExtendedSplashView>());
+                 * 2) In App.CreateWindow(), replace return new Microsoft.Maui.Controls.Window(ServiceProvider.GetRequiredService<MainPageView>()) 
+                 *          with return new Microsoft.Maui.Controls.Window(App.ServiceProvider.GetRequiredService<ExtendedSplashView>())
                  */
                 //.AddRulesCache()
                 .AddViewModels()

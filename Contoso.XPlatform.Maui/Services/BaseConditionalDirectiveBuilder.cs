@@ -12,29 +12,19 @@ using System.Linq.Expressions;
 
 namespace Contoso.XPlatform.Services
 {
-    abstract public class BaseConditionalDirectiveBuilder<TConditionBase, TModel> : IConditionalDirectiveBuilder<TConditionBase, TModel> where TConditionBase : ConditionBase<TModel>, new()
+    abstract public class BaseConditionalDirectiveBuilder<TConditionBase, TModel>(IDirectiveManagersFactory directiveManagersFactory, IMapper mapper, IFormGroupSettings formGroupSettings, IEnumerable<IFormField> properties, List<TConditionBase>? parentList = null, string? parentName = null) : IConditionalDirectiveBuilder<TConditionBase, TModel> where TConditionBase : ConditionBase<TModel>, new()
     {
-        private readonly IDirectiveManagersFactory directiveManagersFactory;
-        private readonly IFormGroupSettings formGroupSettings;
-        private readonly IEnumerable<IFormField> properties;
-        private readonly IMapper mapper;
-        private readonly List<TConditionBase>? parentList;
-        private readonly string? parentName;
+        private readonly IDirectiveManagersFactory directiveManagersFactory = directiveManagersFactory;
+        private readonly IFormGroupSettings formGroupSettings = formGroupSettings;
+        private readonly IEnumerable<IFormField> properties = properties;
+        private readonly IMapper mapper = mapper;
+        private readonly List<TConditionBase>? parentList = parentList;
+        private readonly string? parentName = parentName;
         const string PARAMETERS_KEY = "parameters";
-
-        public BaseConditionalDirectiveBuilder(IDirectiveManagersFactory directiveManagersFactory, IMapper mapper, IFormGroupSettings formGroupSettings, IEnumerable<IFormField> properties, List<TConditionBase>? parentList = null, string? parentName = null)
-        {
-            this.directiveManagersFactory = directiveManagersFactory;
-            this.mapper = mapper;
-            this.formGroupSettings = formGroupSettings;
-            this.properties = properties;
-            this.parentList = parentList;
-            this.parentName = parentName;
-        }
 
         public List<TConditionBase> GetConditions()
         {
-            List<TConditionBase> conditions = formGroupSettings.ConditionalDirectives?.Aggregate(parentList ?? new List<TConditionBase>(), (list, kvp) =>
+            List<TConditionBase> conditions = formGroupSettings.ConditionalDirectives?.Aggregate(parentList ?? [], (list, kvp) =>
             {
                 kvp.Value.ForEach
                 (
@@ -61,7 +51,7 @@ namespace Contoso.XPlatform.Services
                 );
 
                 return list;
-            }) ?? new List<TConditionBase>();
+            }) ?? [];
 
             formGroupSettings.FieldSettings.ForEach(AddConditions);
 

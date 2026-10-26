@@ -13,12 +13,12 @@ namespace Contoso.XPlatform.Views
     {
         public ListPageViewCS(ListPageViewModelBase listPageViewModel)
         {
-            this.listPageCollectionViewModel = listPageViewModel;
+            this.ListPageCollectionViewModel = listPageViewModel;
             AddContent();
-            BindingContext = this.listPageCollectionViewModel;
+            BindingContext = this.ListPageCollectionViewModel;
         }
 
-        public ListPageViewModelBase listPageCollectionViewModel { get; set; }
+        public ListPageViewModelBase ListPageCollectionViewModel { get; set; }
         private Grid transitionGrid;
         private Grid page;
 
@@ -32,50 +32,50 @@ namespace Contoso.XPlatform.Views
         [MemberNotNull(nameof(transitionGrid), nameof(page))]
         private void AddContent()
         {
-            LayoutHelpers.AddToolBarItems(this.ToolbarItems, this.listPageCollectionViewModel.Buttons);
-            Title = this.listPageCollectionViewModel.FormSettings.Title;
+            LayoutHelpers.AddToolBarItems(this.ToolbarItems, this.ListPageCollectionViewModel.Buttons);
+            Title = this.ListPageCollectionViewModel.FormSettings.Title;
+
+            page = new Grid
+            {
+                Style = LayoutHelpers.GetStaticStyleResource(StyleKeys.ListPageViewLayoutStyle),
+                RowDefinitions =
+                {
+                    new RowDefinition { Height = new GridLength(0, GridUnitType.Auto) },
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) }
+                },
+                Children =
+                {
+                    new Label
+                    {
+                        Style = LayoutHelpers.GetStaticStyleResource(StyleKeys.HeaderStyle)
+                    }
+                    .AddBinding(Label.TextProperty, new Binding(nameof(ListPageViewModelBase.Title)))
+                    .SetGridRow(0),
+                    new CollectionView
+                    {
+                        Style = LayoutHelpers.GetStaticStyleResource(StyleKeys.ListFormCollectionViewStyle),
+                        ItemTemplate = LayoutHelpers.GetCollectionViewItemTemplate
+                        (
+                            this.ListPageCollectionViewModel.FormSettings.ItemTemplateName,
+                            this.ListPageCollectionViewModel.FormSettings.Bindings
+                        )
+                    }
+                    .AddBinding(ItemsView.ItemsSourceProperty, new Binding(nameof(ListPageViewModel<>.Items)))
+                    .SetGridRow(1)
+                }
+            };
+
+            transitionGrid = new Grid
+            {
+                Style = LayoutHelpers.GetStaticStyleResource(StyleKeys.TransitionGridStyle)
+            };
 
             Content = new Grid
             {
                 Children =
                 {
-                    (
-                        page = new Grid
-                        {
-                            Style = LayoutHelpers.GetStaticStyleResource(StyleKeys.ListPageViewLayoutStyle),
-                            RowDefinitions = 
-                            { 
-                                new RowDefinition { Height = new GridLength(0, GridUnitType.Auto) }, 
-                                new RowDefinition { Height = new GridLength(1, GridUnitType.Star) } 
-                            },
-                            Children =
-                            {
-                                new Label
-                                {
-                                    Style = LayoutHelpers.GetStaticStyleResource(StyleKeys.HeaderStyle)
-                                }
-                                .AddBinding(Label.TextProperty, new Binding(nameof(ListPageViewModelBase.Title)))
-                                .SetGridRow(0),
-                                new CollectionView
-                                {
-                                    Style = LayoutHelpers.GetStaticStyleResource(StyleKeys.ListFormCollectionViewStyle),
-                                    ItemTemplate = LayoutHelpers.GetCollectionViewItemTemplate
-                                    (
-                                        this.listPageCollectionViewModel.FormSettings.ItemTemplateName,
-                                        this.listPageCollectionViewModel.FormSettings.Bindings
-                                    )
-                                }
-                                .AddBinding(ItemsView.ItemsSourceProperty, new Binding(nameof(ListPageViewModel<>.Items)))
-                                .SetGridRow(1)
-                            }
-                        }
-                    ),
-                    (
-                        transitionGrid = new Grid
-                        {
-                            Style = LayoutHelpers.GetStaticStyleResource(StyleKeys.TransitionGridStyle)
-                        }
-                    )
+                    page,
+                    transitionGrid
                 }
             };
         }

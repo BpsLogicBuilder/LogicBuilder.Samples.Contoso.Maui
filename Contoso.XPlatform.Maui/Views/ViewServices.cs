@@ -1,4 +1,5 @@
-﻿using Contoso.XPlatform.ViewModels.DetailForm;
+﻿using Contoso.XPlatform.Converters;
+using Contoso.XPlatform.ViewModels.DetailForm;
 using Contoso.XPlatform.ViewModels.EditForm;
 using Contoso.XPlatform.ViewModels.ListPage;
 using Contoso.XPlatform.ViewModels.ReadOnlys;
@@ -9,7 +10,9 @@ using Contoso.XPlatform.Views;
 using Contoso.XPlatform.Views.Factories;
 using System;
 
+#pragma warning disable IDE0130 // Microsoft recommended namespace for service registrations
 namespace Microsoft.Extensions.DependencyInjection
+#pragma warning restore IDE0130 // Microsoft recommended namespace for service registrations
 {
     internal static class ViewServices
     {
@@ -31,7 +34,8 @@ namespace Microsoft.Extensions.DependencyInjection
                     provider =>
                     validatable => new ChildFormPageCS
                     (
-                        validatable
+                        validatable,
+                        provider.GetRequiredService<IConverterFactory>()
                     )
                 )
                 .AddTransient<Func<DetailFormViewModelBase, DetailFormViewCS>>
@@ -47,7 +51,8 @@ namespace Microsoft.Extensions.DependencyInjection
                     provider =>
                     viewModel => new EditFormViewCS
                     (
-                        viewModel
+                        viewModel,
+                        provider.GetRequiredService<IConverterFactory>()
                     )
                 )
                 .AddTransient<Func<ListPageViewModelBase, ListPageViewCS>>

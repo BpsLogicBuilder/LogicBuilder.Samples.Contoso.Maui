@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace Contoso.XPlatform.ViewModels.ReadOnlys
 {
-    public class FormReadOnlyObject<T> : ReadOnlyObjectBase<T>, IDisposable where T : class
+    public partial class FormReadOnlyObject<T> : ReadOnlyObjectBase<T>, IDisposable where T : class
     {
         public FormReadOnlyObject(
             ICollectionBuilderFactory collectionBuilderFactory,
@@ -85,6 +85,7 @@ namespace Contoso.XPlatform.ViewModels.ReadOnlys
             }
         }
 
+#pragma warning disable S4275 //using base.Value
         public override T? Value
         {
             get { return base.Value; }
@@ -99,6 +100,7 @@ namespace Contoso.XPlatform.ViewModels.ReadOnlys
                 );
             }
         }
+#pragma warning restore S4275 //using base.Value
 
         private ICommand? _openCommand;
         public ICommand OpenCommand
@@ -151,21 +153,33 @@ namespace Contoso.XPlatform.ViewModels.ReadOnlys
             );
         }
 
-        public virtual void Dispose()
+        private bool disposed;
+
+        protected virtual void Dispose(bool disposing)
         {
-            Dispose(this.directiveManagers);
-            foreach (var property in FormLayout.Properties)
+            if (this.disposed) return;
+            if (disposing)
             {
-                if (property is IDisposable disposable)
-                    Dispose(disposable);
+                DisposeComponent(this.directiveManagers);
+                foreach (var property in FormLayout.Properties)
+                {
+                    if (property is IDisposable disposable)
+                        DisposeComponent(disposable);
+                }
             }
+
+            this.disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
             GC.SuppressFinalize(this);
         }
 
-        protected void Dispose(IDisposable disposable)
+        protected static void DisposeComponent(IDisposable disposable)
         {
-            if (disposable != null)
-                disposable.Dispose();
+            disposable?.Dispose();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Contoso.XPlatform;
+using Contoso.XPlatform.Converters;
 using Contoso.XPlatform.Flow;
 using Contoso.XPlatform.Services;
 using LogicBuilder.App.Utils.Rules;
@@ -22,6 +23,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 .AddAutoMapperServices()
                 .AddHttpClient()
                 .AddSingleton<IHttpService, HttpService>()
+                .AddSingleton<IConverterFactory, ConverterFactory>()
                 .AddAppUtilsServices()
                 .AddRulesCacheService
                 (

@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Contoso.XPlatform.ViewModels.Validatables
 {
-    public partial class EntryValidatableObject<T> : ValidatableObjectBase<T>
+    public partial class EntryValidatableObject<T> : ValidatableObjectBase<T>, IHasStringFormat
     {
         public EntryValidatableObject(IUiNotificationService uiNotificationService, string name, string templateName, string placeholder, string stringFormat, IEnumerable<IValidationRule>? validations) 
             : base(name, templateName, validations, uiNotificationService)

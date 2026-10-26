@@ -7,22 +7,19 @@ using System.Collections.Generic;
 
 namespace Contoso.XPlatform.Services
 {
-    public class HideIfConditionalDirectiveBuilder<TModel> : BaseConditionalDirectiveBuilder<HideIf<TModel>, TModel>
+    public class HideIfConditionalDirectiveBuilder<TModel>(
+        IDirectiveManagersFactory directiveManagersFactory,
+        IMapper mapper,
+        IFormGroupSettings formGroupSettings,
+        IEnumerable<IFormField> properties,
+        List<HideIf<TModel>>? parentList = null,
+        string? parentName = null) : BaseConditionalDirectiveBuilder<HideIf<TModel>, TModel>(
+            directiveManagersFactory,
+            mapper,
+            formGroupSettings,
+            properties,
+            parentList,
+            parentName)
     {
-        public HideIfConditionalDirectiveBuilder(
-            IDirectiveManagersFactory directiveManagersFactory,
-            IMapper mapper,
-            IFormGroupSettings formGroupSettings,
-            IEnumerable<IFormField> properties,
-            List<HideIf<TModel>>? parentList = null,
-            string? parentName = null) : base(
-                directiveManagersFactory,
-                mapper,
-                formGroupSettings,
-                properties,
-                parentList,
-                parentName)
-        {
-        }
     }
 }

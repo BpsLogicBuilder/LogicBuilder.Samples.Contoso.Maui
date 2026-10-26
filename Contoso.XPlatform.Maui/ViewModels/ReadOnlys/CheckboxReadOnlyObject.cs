@@ -2,7 +2,7 @@
 
 namespace Contoso.XPlatform.ViewModels.ReadOnlys
 {
-    public class CheckboxReadOnlyObject : ReadOnlyObjectBase<bool>
+    public partial class CheckboxReadOnlyObject : ReadOnlyObjectBase<bool>
     {
         public CheckboxReadOnlyObject(
             IUiNotificationService uiNotificationService,

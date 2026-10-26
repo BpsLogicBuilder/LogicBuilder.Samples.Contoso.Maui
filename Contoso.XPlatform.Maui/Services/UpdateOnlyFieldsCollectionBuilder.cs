@@ -10,30 +10,26 @@ using System.Linq;
 
 namespace Contoso.XPlatform.Services
 {
-    public class UpdateOnlyFieldsCollectionBuilder : FieldsCollectionBuilder, IUpdateOnlyFieldsCollectionBuilder
+    public class UpdateOnlyFieldsCollectionBuilder(
+        ICollectionBuilderFactory collectionBuilderFactory,
+        IValidatableFactory validatableFactory,
+        IValidatableValueHelper validatableValueHelper,
+        List<IFormItemSettingsDescriptor> fieldSettings,
+        IFormGroupBoxSettings groupBoxSettings,
+        Dictionary<string, List<ValidationRuleDescriptor>> validationMessages,
+        Type modelType,
+        EditFormLayout? formLayout = null,
+        string? parentName = null) : FieldsCollectionBuilder(
+            collectionBuilderFactory,
+            validatableFactory,
+            validatableValueHelper,
+            fieldSettings,
+            groupBoxSettings,
+            validationMessages,
+            modelType,
+            formLayout,
+            parentName), IUpdateOnlyFieldsCollectionBuilder
     {
-        public UpdateOnlyFieldsCollectionBuilder(
-            ICollectionBuilderFactory collectionBuilderFactory,
-            IValidatableFactory validatableFactory,
-            IValidatableValueHelper validatableValueHelper,
-            List<IFormItemSettingsDescriptor> fieldSettings,
-            IFormGroupBoxSettings groupBoxSettings,
-            Dictionary<string, List<ValidationRuleDescriptor>> validationMessages,
-            Type modelType,
-            EditFormLayout? formLayout = null,
-            string? parentName = null) : base(
-                collectionBuilderFactory,
-                validatableFactory,
-                validatableValueHelper,
-                fieldSettings,
-                groupBoxSettings,
-                validationMessages,
-                modelType,
-                formLayout,
-                parentName)
-        {
-        }
-
         protected override void AddFormControl(InputFieldControlSettingsDescriptor setting)
         {
             if (setting.UpdateOnlyTextTemplate != null)

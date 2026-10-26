@@ -12,11 +12,12 @@ using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Contoso.XPlatform.ViewModels.ReadOnlys
 {
-    public class MultiSelectReadOnlyObject<T, E> : ReadOnlyObjectBase<T>, IHasItemsSourceReadOnly where T : ObservableCollection<E>
+    public partial class MultiSelectReadOnlyObject<T, E> : ReadOnlyObjectBase<T>, IHasItemsSourceReadOnly where T : ObservableCollection<E>
     {
         public MultiSelectReadOnlyObject(
             IHttpService httpService,
@@ -30,20 +31,18 @@ namespace Contoso.XPlatform.ViewModels.ReadOnlys
             : base(name, multiSelectTemplate.TemplateName, uiNotificationService)
         {
             this._multiSelectTemplate = multiSelectTemplate;
-            this._keyFields = keyFields;
             this._stringFormat = stringFormat;
             this.httpService = httpService;
             this.popupFormFactory = popupFormFactory;
             this.Title = title;
             this.Placeholder = this._multiSelectTemplate.LoadingIndicatorText;
-            itemComparer = new MultiSelectItemComparer<E>(this._keyFields);
-            SelectedItems = new ObservableCollection<object>();
-            GetItemSource();
+            itemComparer = new MultiSelectItemComparer<E>(keyFields);
+            SelectedItems = [];
+            _ = GetItemSource();
         }
 
         private readonly IHttpService httpService;
         private readonly IPopupFormFactory popupFormFactory;
-        private readonly List<string> _keyFields;
         private readonly string _stringFormat;
         private readonly MultiSelectTemplateDescriptor _multiSelectTemplate;
         private readonly MultiSelectItemComparer<E> itemComparer;
@@ -109,6 +108,7 @@ namespace Contoso.XPlatform.ViewModels.ReadOnlys
             }
         }
 
+#pragma warning disable S4275 //using base.Value
         public override T? Value
         {
             get { return base.Value; }
@@ -122,6 +122,7 @@ namespace Contoso.XPlatform.ViewModels.ReadOnlys
                 OnPropertyChanged(nameof(SelectedItems));
             }
         }
+#pragma warning restore S4275 //using base.Value
 
         ObservableCollection<object> _selectedItems;
         public ObservableCollection<object> SelectedItems
@@ -151,7 +152,7 @@ namespace Contoso.XPlatform.ViewModels.ReadOnlys
             }
         }
 
-        private async void GetItemSource()
+        private async Task GetItemSource()
         {
             try
             {
@@ -168,7 +169,7 @@ namespace Contoso.XPlatform.ViewModels.ReadOnlys
                     this._multiSelectTemplate.RequestDetails.DataSourceUrl
                 );
 
-                if (response.Success != true)
+                if (!response.Success)
                 {
 #if DEBUG
                     await App.Current!.Windows[0].Page!.DisplayAlertAsync
@@ -181,7 +182,7 @@ namespace Contoso.XPlatform.ViewModels.ReadOnlys
                     return;
                 }
 
-                Items = ((GetListResponse)response).List.OfType<E>().ToList();
+                Items = [.. ((GetListResponse)response).List.OfType<E>()];
                 UpdateSelectedItems();
             }
             catch (Exception e)
@@ -204,11 +205,11 @@ namespace Contoso.XPlatform.ViewModels.ReadOnlys
 
         private void UpdateSelectedItems()
         {
-            if (Items?.Any() != true)
+            if (Items == null || Items.Count == 0)
                 return;
 
             var selected = Value?.Any() != true
-                ? Enumerable.Empty<object>()
+                ? []
                 : Items.Where(i => Value.Contains(i, itemComparer)).Cast<object>();
 
             SelectedItems.Clear();

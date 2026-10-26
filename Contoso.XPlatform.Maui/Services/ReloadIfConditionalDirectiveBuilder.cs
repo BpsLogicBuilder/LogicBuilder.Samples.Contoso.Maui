@@ -7,22 +7,19 @@ using System.Collections.Generic;
 
 namespace Contoso.XPlatform.Services
 {
-    public class ReloadIfConditionalDirectiveBuilder<TModel> : BaseConditionalDirectiveBuilder<ReloadIf<TModel>, TModel>
+    public class ReloadIfConditionalDirectiveBuilder<TModel>(
+        IDirectiveManagersFactory directiveManagersFactory,
+        IMapper mapper,
+        IFormGroupSettings formGroupSettings,
+        IEnumerable<IFormField> properties,
+        List<ReloadIf<TModel>>? parentList = null,
+        string? parentName = null) : BaseConditionalDirectiveBuilder<ReloadIf<TModel>, TModel>(
+            directiveManagersFactory,
+            mapper,
+            formGroupSettings,
+            properties,
+            parentList,
+            parentName)
     {
-        public ReloadIfConditionalDirectiveBuilder(
-            IDirectiveManagersFactory directiveManagersFactory,
-            IMapper mapper,
-            IFormGroupSettings formGroupSettings,
-            IEnumerable<IFormField> properties,
-            List<ReloadIf<TModel>>? parentList = null,
-            string? parentName = null) : base(
-                directiveManagersFactory,
-                mapper,
-                formGroupSettings,
-                properties,
-                parentList,
-                parentName)
-        {
-        }
     }
 }

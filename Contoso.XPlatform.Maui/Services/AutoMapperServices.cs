@@ -4,7 +4,9 @@ using LogicBuilder.App.Maui.AutoMapperProfiles;
 using LogicBuilder.EntityFrameworkCore.Mapping;
 using Microsoft.Extensions.Logging.Abstractions;
 
+#pragma warning disable IDE0130 // Microsoft recommended namespace for service registrations
 namespace Microsoft.Extensions.DependencyInjection
+#pragma warning restore IDE0130 // Microsoft recommended namespace for service registrations
 {
     internal static class AutoMapperServices
     {

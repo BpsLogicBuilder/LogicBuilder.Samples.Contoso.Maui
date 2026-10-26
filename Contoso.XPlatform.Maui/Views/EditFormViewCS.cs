@@ -1,4 +1,5 @@
 ﻿using Contoso.XPlatform.Constants;
+using Contoso.XPlatform.Converters;
 using Contoso.XPlatform.Utils;
 using Contoso.XPlatform.ViewModels;
 using Contoso.XPlatform.ViewModels.EditForm;
@@ -15,14 +16,16 @@ namespace Contoso.XPlatform.Views
 {
     public partial class EditFormViewCS : ContentPage
     {
-        public EditFormViewCS(EditFormViewModelBase editFormViewModel)
+        public EditFormViewCS(EditFormViewModelBase editFormViewModel, IConverterFactory converterFactory)
         {
             this.editFormEntityViewModel = editFormViewModel;
+            this.converterFactory = converterFactory;
             AddContent();
             BindingContext = this.editFormEntityViewModel;
         }
 
         private readonly EditFormViewModelBase editFormEntityViewModel;
+        private readonly IConverterFactory converterFactory;
         private Grid transitionGrid;
         private Grid page;
 
@@ -110,7 +113,7 @@ namespace Contoso.XPlatform.Views
                                         BindingContext = controlBox
                                     }
                                     .AddBinding(BindableLayout.ItemsSourceProperty, new Binding("."))
-                                    .SetDataTemplateSelector(EditFormViewHelpers.QuestionTemplateSelector)
+                                    .SetDataTemplateSelector(EditFormViewHelpers.GetQuestionTemplateSelector(converterFactory))
                                 );
 
                                 return stackLayout;

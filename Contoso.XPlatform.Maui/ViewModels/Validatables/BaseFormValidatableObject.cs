@@ -228,7 +228,9 @@ namespace Contoso.XPlatform.ViewModels.Validatables
                 (isTrue, next) => next.Validate() && isTrue
             );
 
+#pragma warning disable IDE0060 // part of signature for Subject<>.Subscribe
         protected void FieldChanged(string fieldName)
+#pragma warning restore IDE0060 // part of signature for Subject<>.Subscribe
         {
             ((Command)SubmitCommand).ChangeCanExecute();
         }

@@ -18,14 +18,14 @@ namespace Contoso.XPlatform.Services
 
         private void UpdateReadOnlys(IEnumerable<IReadOnly> properties, Type modelType, object entity, List<ItemBindingDescriptor> itemBindings)
         {
-            IDictionary<string, object?> existingValues = GetExistingValues(entity, itemBindings);/*can't use IMapper.Map here because thekey includes multipart names.*/
-            IDictionary<string, IReadOnly> propertiesDictionary = properties.ToDictionary(p => p.Name);
+            Dictionary<string, object?> existingValues = GetExistingValues(entity, itemBindings);/*can't use IMapper.Map here because thekey includes multipart names.*/
+            Dictionary<string, IReadOnly> propertiesDictionary = properties.ToDictionary(p => p.Name);
 
             foreach (var binding in itemBindings)
             {
                 Type fieldType = GetModelFieldType(modelType, binding.Property);
 
-                if (binding is MultiSelectItemBindingDescriptor multiSelectItemBindingDescriptor)
+                if (binding is MultiSelectItemBindingDescriptor)
                 {
                     if (existingValues.TryGetValue(binding.Property, out object? @value) && @value != null)
                     {
@@ -35,7 +35,7 @@ namespace Contoso.XPlatform.Services
                             (
                                 fieldType.GetUnderlyingElementType()
                             ),
-                            new object[] { @value }
+                            [@value]
                         ) ?? throw new ArgumentException($"{fieldType}: {{C5A07697-029C-418F-B6B0-D1E96A72D2BC}}");
                     }
                 }
@@ -51,7 +51,7 @@ namespace Contoso.XPlatform.Services
             }
         }
 
-        private IDictionary<string, object?> GetExistingValues(object entity, List<ItemBindingDescriptor> itemBindings) 
+        private Dictionary<string, object?> GetExistingValues(object entity, List<ItemBindingDescriptor> itemBindings) 
             => itemBindings.Select
             (
                 binding => new KeyValuePair<string, object?>(binding.Property, GetValue(entity, binding.Property))
