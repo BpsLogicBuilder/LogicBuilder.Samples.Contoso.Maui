@@ -1,0 +1,37 @@
+﻿using Contoso.XPlatform.ViewModels.Validatables;
+using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+namespace Contoso.XPlatform.ViewModels
+{
+    public class EditFormLayout
+    {
+        public EditFormLayout()
+        {
+            ControlGroupBoxList = [];
+            Properties = [];
+        }
+
+        public void Add(IValidatable validatable, IFormGroupBoxSettings groupBoxSettings)
+        {
+            Properties.Add(validatable);
+
+            if (ControlGroupBoxList.Count == 0)
+                throw new InvalidOperationException("{AA443C6C-7007-498B-9404-54D87CE1278C}");
+
+            ControlGroupBoxList
+                .Single(g => object.ReferenceEquals(g.GroupBoxSettings, groupBoxSettings))
+                .Add(validatable);
+        }
+
+        public void AddControlGroupBox(IFormGroupBoxSettings groupBoxSettings)
+            => ControlGroupBoxList.Add(new ControlGroupBox(groupBoxSettings));
+
+        public List<ControlGroupBox> ControlGroupBoxList { get; }
+
+        public ObservableCollection<IValidatable> Properties { get; }
+    }
+}

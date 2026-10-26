@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/App/">
+    <Project Path="Contoso.XPlatform.Flow/Contoso.XPlatform.Flow.csproj" />
+    <Project Path="Contoso.XPlatform.Maui/Contoso.XPlatform.Maui.csproj" />
+  </Folder>
+  <Folder Name="/Business/">
+    <Project Path="Contoso.Domain/Contoso.Domain.csproj" />
+  </Folder>
+  <Folder Name="/EF/">
+    <Project Path="Contoso.Data/Contoso.Data.csproj" />
+  </Folder>
+  <Folder Name="/_Solution Items/" />
+</Solution>

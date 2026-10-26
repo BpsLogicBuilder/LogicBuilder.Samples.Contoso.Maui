@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<WarningsAsErrors>true</WarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LogicBuilder.App.Maui.AutoMapperProfiles" Version="1.0.2" />
+		<PackageReference Include="LogicBuilder.App.Utils" Version="1.0.8" />
+		<PackageReference Include="LogicBuilder.RulesDirector" Version="2.0.6" />
+		<PackageReference Include="LogicBuilder.Structures" Version="8.1.1" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Contoso.Data\Contoso.Data.csproj" />
+    <ProjectReference Include="..\Contoso.Domain\Contoso.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

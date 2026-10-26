@@ -1,0 +1,16 @@
+﻿using System.Threading.Tasks;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+
+namespace Contoso.XPlatform.Utils
+{
+    internal static class TransitionsHelper
+    {
+        public static async Task EntranceTransition(this View view, View transitionGrid, double offset)
+        {
+            await view.TranslateToAsync(offset, 0, 0);
+            transitionGrid.IsVisible = false;
+            await view.TranslateToAsync(0, 0, 1000, Easing.CubicOut);
+        }
+    }
+}
