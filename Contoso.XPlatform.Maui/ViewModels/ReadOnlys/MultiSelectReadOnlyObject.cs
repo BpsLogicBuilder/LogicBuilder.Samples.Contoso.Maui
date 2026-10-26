@@ -1,9 +1,9 @@
-﻿using Contoso.Bsl.Business.Requests;
-using Contoso.Bsl.Business.Responses;
-using Contoso.Forms.Configuration;
-using Contoso.XPlatform.Services;
+﻿using Contoso.XPlatform.Services;
 using Contoso.XPlatform.Utils;
 using Contoso.XPlatform.Views.Factories;
+using LogicBuilder.App.Bsl.Business.Requests;
+using LogicBuilder.App.Bsl.Business.Responses;
+using LogicBuilder.App.Maui.Forms.Configuration;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;
 using System;

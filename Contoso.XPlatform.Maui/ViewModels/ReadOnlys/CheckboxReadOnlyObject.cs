@@ -1,6 +1,4 @@
-﻿using Contoso.Forms.Configuration.DataForm;
-using Contoso.XPlatform.Services;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace Contoso.XPlatform.ViewModels.ReadOnlys
 {

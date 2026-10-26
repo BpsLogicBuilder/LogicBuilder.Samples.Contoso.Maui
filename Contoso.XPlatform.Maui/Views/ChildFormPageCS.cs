@@ -71,7 +71,7 @@ namespace Contoso.XPlatform.Views
                                                 .AddBinding
                                                 (
                                                     Label.TextProperty,
-                                                    GetHeaderBinding(controlBox.HeaderBindings, $"{nameof(ControlGroupBox.GroupHeader)}")
+                                                    GetHeaderBinding(controlBox.HeaderBindings ?? throw new InvalidOperationException($"{nameof(controlBox.HeaderBindings)} cannot be null."), $"{nameof(ControlGroupBox.GroupHeader)}")
                                                 )
                                             );
                                             stackLayout.Children.Add

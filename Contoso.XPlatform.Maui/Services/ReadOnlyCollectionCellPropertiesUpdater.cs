@@ -1,5 +1,6 @@
 ﻿using Contoso.XPlatform.ViewModels.ReadOnlys;
 using LogicBuilder.App.Maui.Forms.Configuration.Bindings;
+using LogicBuilder.App.Utils.Interfaces;
 using LogicBuilder.Expressions.Utils;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,9 @@ using System.Linq;
 
 namespace Contoso.XPlatform.Services
 {
-    public class ReadOnlyCollectionCellPropertiesUpdater : IReadOnlyCollectionCellPropertiesUpdater
+    public class ReadOnlyCollectionCellPropertiesUpdater(ITypeHelper typeHelper) : IReadOnlyCollectionCellPropertiesUpdater
     {
-        public ReadOnlyCollectionCellPropertiesUpdater()
-        {
-        }
+        private readonly ITypeHelper typeHelper = typeHelper;
 
         public void UpdateProperties(IEnumerable<IReadOnly> properties, Type modelType, object entity, List<ItemBindingDescriptor> itemBindings)
             => UpdateReadOnlys(properties, modelType, entity, itemBindings);
@@ -52,7 +51,7 @@ namespace Contoso.XPlatform.Services
             }
         }
 
-        private static IDictionary<string, object?> GetExistingValues(object entity, List<ItemBindingDescriptor> itemBindings) 
+        private IDictionary<string, object?> GetExistingValues(object entity, List<ItemBindingDescriptor> itemBindings) 
             => itemBindings.Select
             (
                 binding => new KeyValuePair<string, object?>(binding.Property, GetValue(entity, binding.Property))
@@ -62,15 +61,15 @@ namespace Contoso.XPlatform.Services
         private static Type GetModelFieldType(Type modelType, string fullPropertyName)
                 => modelType.GetMemberInfoFromFullName(fullPropertyName).GetMemberType();
 
-        private static object GetValue(object entity, string fullName)
+        private object GetValue(object entity, string fullName)
         {
             string[] parts = fullName.Split('.');
             if (parts.Length == 1)
-                return Contoso.Utils.TypeHelpers.GetPropertyValue(entity, fullName);
+                return typeHelper.GetPropertyValue(entity, fullName);
             else
                 return GetValue
                 (
-                    Contoso.Utils.TypeHelpers.GetPropertyValue(entity, parts[0]),
+                    typeHelper.GetPropertyValue(entity, parts[0]),
                     string.Join(",", parts.Skip(1))
                 );
         }

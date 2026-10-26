@@ -22,6 +22,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 .AddAutoMapperServices()
                 .AddHttpClient()
                 .AddSingleton<IHttpService, HttpService>()
+                .AddAppUtilsServices()
                 .AddRulesCacheService
                 (
                     new RulesLoaderRequest

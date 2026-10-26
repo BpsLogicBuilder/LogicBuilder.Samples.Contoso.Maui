@@ -1,5 +1,4 @@
-﻿using Contoso.Forms.Configuration.Directives;
-using LogicBuilder.App.Maui.Forms.Configuration.Directives;
+﻿using LogicBuilder.App.Maui.Forms.Configuration.Directives;
 using System;
 using System.Linq.Expressions;
 

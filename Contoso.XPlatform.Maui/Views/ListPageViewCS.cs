@@ -65,7 +65,7 @@ namespace Contoso.XPlatform.Views
                                         this.listPageCollectionViewModel.FormSettings.Bindings
                                     )
                                 }
-                                .AddBinding(ItemsView.ItemsSourceProperty, new Binding(nameof(ListPageViewModel<Domain.EntityModelBase>.Items)))
+                                .AddBinding(ItemsView.ItemsSourceProperty, new Binding(nameof(ListPageViewModel<>.Items)))
                                 .SetGridRow(1)
                             }
                         }

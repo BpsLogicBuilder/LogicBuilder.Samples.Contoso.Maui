@@ -1,9 +1,9 @@
-﻿using Contoso.Forms.Configuration.DataForm;
-using Contoso.XPlatform.Directives;
+﻿using Contoso.XPlatform.Directives;
 using Contoso.XPlatform.Directives.Factories;
 using Contoso.XPlatform.Services;
 using Contoso.XPlatform.ViewModels.Factories;
 using Contoso.XPlatform.Views.Factories;
+using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;
 using System;

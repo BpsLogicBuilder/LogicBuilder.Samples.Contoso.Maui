@@ -1,6 +1,4 @@
 ﻿using Contoso.XPlatform.ViewModels.Validatables;
-using LogicBuilder.App.Utils;
-using LogicBuilder.App.Utils.Interfaces;
 using Microsoft.Maui.Controls;
 using System;
 using System.Globalization;
@@ -26,19 +24,21 @@ namespace Contoso.XPlatform.Converters
 
             string GetStringFormat()
             {
-                return ((VisualElement)parameter!).BindingContext.GetPropertyValue<string>
-                (
-                    nameof(EntryValidatableObject<string>.StringFormat)
-                );
+                //return ((VisualElement)parameter!).BindingContext.GetPropertyValue<string>
+                //(
+                //    nameof(EntryValidatableObject<>.StringFormat)
+                //);
+                return "";
             }
         }
 
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            if ((value ?? "").ToString().TryParse(targetType, out object result))
-                return result;
+            //if ((value ?? "").ToString().TryParse(targetType, out object result))
+            //    return result;
 
-            return value;
+            //return value;
+            throw new NotImplementedException();
         }
     }
 }

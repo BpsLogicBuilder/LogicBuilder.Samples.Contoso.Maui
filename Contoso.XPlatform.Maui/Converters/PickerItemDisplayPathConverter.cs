@@ -1,9 +1,8 @@
-﻿using Contoso.Forms.Configuration;
-using Contoso.Utils;
-using Contoso.XPlatform.ViewModels.Validatables;
+﻿using Contoso.XPlatform.ViewModels.Validatables;
+using LogicBuilder.App.Maui.Forms.Configuration;
+using Microsoft.Maui.Controls;
 using System;
 using System.Globalization;
-using Microsoft.Maui.Controls;
 
 namespace Contoso.XPlatform.Converters
 {
@@ -15,12 +14,13 @@ namespace Contoso.XPlatform.Converters
                 return null!;/*ok to return null for converters*/
 
             object bindingContext = ((VisualElement)parameter!).BindingContext;
-            var dropDownTemplate = bindingContext.GetPropertyValue<DropDownTemplateDescriptor>
-            (
-                nameof(PickerValidatableObject<int>.DropDownTemplate)
-            );
+            //var dropDownTemplate = bindingContext.GetPropertyValue<DropDownTemplateDescriptor>
+            //(
+            //    nameof(PickerValidatableObject<int>.DropDownTemplate)
+            //);
 
-            return value.GetPropertyValue<string>(dropDownTemplate.TextField);
+            //return value.GetPropertyValue<string>(dropDownTemplate.TextField);
+            return null;
         }
 
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
