@@ -75,6 +75,9 @@ public partial class MainPageView : FlyoutPage
 
     private async Task ChangePageAsync(FlowSettings flowSettings)
     {
+        if (flowSettings.ScreenSettings == null)
+            throw new InvalidOperationException("Screen settings cannot be null");
+
         await ChangePage(_detailPageFactory.CreatePage(flowSettings.ScreenSettings));
 
         UpdateNavigationMenu(flowSettings);

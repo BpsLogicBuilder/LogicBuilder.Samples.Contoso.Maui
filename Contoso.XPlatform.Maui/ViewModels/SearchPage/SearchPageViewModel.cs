@@ -386,30 +386,30 @@ namespace Contoso.XPlatform.ViewModels.SearchPage
 
         private void SelectAndNavigate(CommandButtonDescriptor button)
         {
-            SetEntityAndNavigateNext(button);
+            _ = SetEntityAndNavigateNext(button);
         }
 
         private static void Add(CommandButtonDescriptor button)
         {
-            SearchPageViewModel<TModel>.NavigateNext(button);
+            _ = SearchPageViewModel<TModel>.NavigateNext(button);
         }
 
         private void Edit(CommandButtonDescriptor button)
         {
-            SetEntityAndNavigateNext(button);
+            _ = SetEntityAndNavigateNext(button);
         }
 
         private void Delete(CommandButtonDescriptor button)
         {
-            SetEntityAndNavigateNext(button);
+            _ = SetEntityAndNavigateNext(button);
         }
 
         private void Detail(CommandButtonDescriptor button)
         {
-            SetEntityAndNavigateNext(button);
+            _ = SetEntityAndNavigateNext(button);
         }
 
-        private void SetEntityAndNavigateNext(CommandButtonDescriptor button)
+        private async Task SetEntityAndNavigateNext(CommandButtonDescriptor button)
         {
             using IScopedFlowManagerService flowManagerService = App.ServiceProvider.GetRequiredService<IScopedFlowManagerService>();
             flowManagerService.CopyFlowItems();
@@ -425,7 +425,7 @@ namespace Contoso.XPlatform.ViewModels.SearchPage
                 this._entitiesDictionary[SelectedItem]
             );
 
-            flowManagerService.Next
+            await flowManagerService.Next
             (
                 new CommandButtonRequest
                 {
@@ -434,12 +434,12 @@ namespace Contoso.XPlatform.ViewModels.SearchPage
             );
         }
 
-        private static void NavigateNext(CommandButtonDescriptor button)
+        private static async Task NavigateNext(CommandButtonDescriptor button)
         {
             using IScopedFlowManagerService flowManagerService = App.ServiceProvider.GetRequiredService<IScopedFlowManagerService>();
             flowManagerService.CopyFlowItems();
 
-            flowManagerService.Next
+            await flowManagerService.Next
             (
                 new CommandButtonRequest
                 {

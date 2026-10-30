@@ -9,8 +9,52 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Rulesets\about.module" />
+    <EmbeddedResource Include="Rulesets\about.resources" />
+    <EmbeddedResource Include="Rulesets\about_nav.module" />
+    <EmbeddedResource Include="Rulesets\about_nav.resources" />
+    <EmbeddedResource Include="Rulesets\courses.module" />
+    <EmbeddedResource Include="Rulesets\courses.resources" />
+    <EmbeddedResource Include="Rulesets\departments.module" />
+    <EmbeddedResource Include="Rulesets\departments.resources" />
+    <EmbeddedResource Include="Rulesets\home.module" />
+    <EmbeddedResource Include="Rulesets\home.resources" />
+    <EmbeddedResource Include="Rulesets\home_nav.module" />
+    <EmbeddedResource Include="Rulesets\home_nav.resources" />
+    <EmbeddedResource Include="Rulesets\instructors.module" />
+    <EmbeddedResource Include="Rulesets\instructors.resources" />
+    <EmbeddedResource Include="Rulesets\item_filter_courses.module" />
+    <EmbeddedResource Include="Rulesets\item_filter_courses.resources" />
+    <EmbeddedResource Include="Rulesets\item_filter_departments.module" />
+    <EmbeddedResource Include="Rulesets\item_filter_departments.resources" />
+    <EmbeddedResource Include="Rulesets\item_filter_instructors.module" />
+    <EmbeddedResource Include="Rulesets\item_filter_instructors.resources" />
+    <EmbeddedResource Include="Rulesets\item_filter_students.module" />
+    <EmbeddedResource Include="Rulesets\item_filter_students.resources" />
+    <EmbeddedResource Include="Rulesets\nav_courses.module" />
+    <EmbeddedResource Include="Rulesets\nav_courses.resources" />
+    <EmbeddedResource Include="Rulesets\nav_departments.module" />
+    <EmbeddedResource Include="Rulesets\nav_departments.resources" />
+    <EmbeddedResource Include="Rulesets\nav_instructors.module" />
+    <EmbeddedResource Include="Rulesets\nav_instructors.resources" />
+    <EmbeddedResource Include="Rulesets\nav_students.module" />
+    <EmbeddedResource Include="Rulesets\nav_students.resources" />
+    <EmbeddedResource Include="Rulesets\paging_selector_courses.module" />
+    <EmbeddedResource Include="Rulesets\paging_selector_courses.resources" />
+    <EmbeddedResource Include="Rulesets\paging_selector_departments.module" />
+    <EmbeddedResource Include="Rulesets\paging_selector_departments.resources" />
+    <EmbeddedResource Include="Rulesets\paging_selector_instructors.module" />
+    <EmbeddedResource Include="Rulesets\paging_selector_instructors.resources" />
+    <EmbeddedResource Include="Rulesets\paging_selector_students.module" />
+    <EmbeddedResource Include="Rulesets\paging_selector_students.resources" />
+    <EmbeddedResource Include="Rulesets\students.module" />
+    <EmbeddedResource Include="Rulesets\students.resources" />
+    <EmbeddedResource Include="Rulesets\VariablesMetadata.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="LogicBuilder.App.Maui.AutoMapperProfiles" Version="1.0.2" />
-		<PackageReference Include="LogicBuilder.App.Utils" Version="1.0.8" />
+		<PackageReference Include="LogicBuilder.App.Utils" Version="1.0.9-alpha.0.4" />
 		<PackageReference Include="LogicBuilder.RulesDirector" Version="2.0.6" />
 		<PackageReference Include="LogicBuilder.Structures" Version="8.1.1" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.12" />

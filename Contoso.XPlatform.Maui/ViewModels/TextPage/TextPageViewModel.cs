@@ -9,6 +9,7 @@ using Microsoft.Maui.Controls;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Contoso.XPlatform.ViewModels.TextPage
@@ -71,15 +72,15 @@ namespace Contoso.XPlatform.ViewModels.TextPage
 
         private static void Next(CommandButtonDescriptor button)
         {
-            TextPageViewModel.NavigateNext(button);
+           _ = NavigateNext(button);
         }
 
-        private static void NavigateNext(CommandButtonDescriptor button)
+        private static async Task NavigateNext(CommandButtonDescriptor button)
         {
             using IScopedFlowManagerService flowManagerService = App.ServiceProvider.GetRequiredService<IScopedFlowManagerService>();
             flowManagerService.CopyFlowItems();
 
-            flowManagerService.Next
+            await flowManagerService.Next
             (
                 new CommandButtonRequest
                 {

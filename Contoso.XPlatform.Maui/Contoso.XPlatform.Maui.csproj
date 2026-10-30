@@ -2,10 +2,10 @@
 
 	<PropertyGroup>
 		<TargetFrameworks>net10.0-android;net10.0-ios;net10.0-maccatalyst;net10.0</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-windows10.0.26100.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net10.0-tizen</TargetFrameworks> -->
-		<OutputType Condition="$(TargetFramework) == 'net10.0-android' OR $(TargetFramework) == 'net10.0-ios' OR $(TargetFramework) == 'net10.0-maccatalyst' OR $(TargetFramework) == 'net10.0-windows10.0.19041.0'">Exe</OutputType>
+		<OutputType Condition="$(TargetFramework) == 'net10.0-android' OR $(TargetFramework) == 'net10.0-ios' OR $(TargetFramework) == 'net10.0-maccatalyst' OR $(TargetFramework) == 'net10.0-windows10.0.26100.0'">Exe</OutputType>
 		<OutputType Condition="$(TargetFramework) == 'net10.0'">Library</OutputType>
 		<RootNamespace>Contoso.XPlatform</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -27,14 +27,14 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.4</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.4</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">33.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.19041.0</SupportedOSPlatformVersion>
-		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.19041.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.26100.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.26100.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<WindowsPackageType>None</WindowsPackageType>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="$(TargetFramework) == 'net10.0-android' OR $(TargetFramework) == 'net10.0-windows10.0.19041.0'">
+	<PropertyGroup Condition="$(TargetFramework) == 'net10.0-android' OR $(TargetFramework) == 'net10.0-windows10.0.26100.0'">
 		<IntermediateOutputPath>C:\ContosoMaui\obj\</IntermediateOutputPath>
 	</PropertyGroup>
 
@@ -58,94 +58,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="appsettings.json" />
 	  <None Remove="Resources\Fonts\FontAwesome5Solid900.otf" />
 	  <None Remove="Resources\Images\hamburger.png" />
 	  <None Remove="Resources\Images\splash_logo.png" />
-	  <None Remove="Rulesets\about.module" />
-	  <None Remove="Rulesets\about.resources" />
-	  <None Remove="Rulesets\about_nav.module" />
-	  <None Remove="Rulesets\about_nav.resources" />
-	  <None Remove="Rulesets\courses.module" />
-	  <None Remove="Rulesets\courses.resources" />
-	  <None Remove="Rulesets\departments.module" />
-	  <None Remove="Rulesets\departments.resources" />
-	  <None Remove="Rulesets\home.module" />
-	  <None Remove="Rulesets\home.resources" />
-	  <None Remove="Rulesets\home_nav.module" />
-	  <None Remove="Rulesets\home_nav.resources" />
-	  <None Remove="Rulesets\instructors.module" />
-	  <None Remove="Rulesets\instructors.resources" />
-	  <None Remove="Rulesets\item_filter_courses.module" />
-	  <None Remove="Rulesets\item_filter_courses.resources" />
-	  <None Remove="Rulesets\item_filter_departments.module" />
-	  <None Remove="Rulesets\item_filter_departments.resources" />
-	  <None Remove="Rulesets\item_filter_instructors.module" />
-	  <None Remove="Rulesets\item_filter_instructors.resources" />
-	  <None Remove="Rulesets\item_filter_students.module" />
-	  <None Remove="Rulesets\item_filter_students.resources" />
-	  <None Remove="Rulesets\nav_courses.module" />
-	  <None Remove="Rulesets\nav_courses.resources" />
-	  <None Remove="Rulesets\nav_departments.module" />
-	  <None Remove="Rulesets\nav_departments.resources" />
-	  <None Remove="Rulesets\nav_instructors.module" />
-	  <None Remove="Rulesets\nav_instructors.resources" />
-	  <None Remove="Rulesets\nav_students.module" />
-	  <None Remove="Rulesets\nav_students.resources" />
-	  <None Remove="Rulesets\paging_selector_courses.module" />
-	  <None Remove="Rulesets\paging_selector_courses.resources" />
-	  <None Remove="Rulesets\paging_selector_departments.module" />
-	  <None Remove="Rulesets\paging_selector_departments.resources" />
-	  <None Remove="Rulesets\paging_selector_instructors.module" />
-	  <None Remove="Rulesets\paging_selector_instructors.resources" />
-	  <None Remove="Rulesets\paging_selector_students.module" />
-	  <None Remove="Rulesets\paging_selector_students.resources" />
-	  <None Remove="Rulesets\students.module" />
-	  <None Remove="Rulesets\students.resources" />
-	  <None Remove="Rulesets\VariablesMetadata.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Include="Rulesets\about.module" />
-	  <EmbeddedResource Include="Rulesets\about.resources" />
-	  <EmbeddedResource Include="Rulesets\about_nav.module" />
-	  <EmbeddedResource Include="Rulesets\about_nav.resources" />
-	  <EmbeddedResource Include="Rulesets\courses.module" />
-	  <EmbeddedResource Include="Rulesets\courses.resources" />
-	  <EmbeddedResource Include="Rulesets\departments.module" />
-	  <EmbeddedResource Include="Rulesets\departments.resources" />
-	  <EmbeddedResource Include="Rulesets\home.module" />
-	  <EmbeddedResource Include="Rulesets\home.resources" />
-	  <EmbeddedResource Include="Rulesets\home_nav.module" />
-	  <EmbeddedResource Include="Rulesets\home_nav.resources" />
-	  <EmbeddedResource Include="Rulesets\instructors.module" />
-	  <EmbeddedResource Include="Rulesets\instructors.resources" />
-	  <EmbeddedResource Include="Rulesets\item_filter_courses.module" />
-	  <EmbeddedResource Include="Rulesets\item_filter_courses.resources" />
-	  <EmbeddedResource Include="Rulesets\item_filter_departments.module" />
-	  <EmbeddedResource Include="Rulesets\item_filter_departments.resources" />
-	  <EmbeddedResource Include="Rulesets\item_filter_instructors.module" />
-	  <EmbeddedResource Include="Rulesets\item_filter_instructors.resources" />
-	  <EmbeddedResource Include="Rulesets\item_filter_students.module" />
-	  <EmbeddedResource Include="Rulesets\item_filter_students.resources" />
-	  <EmbeddedResource Include="Rulesets\nav_courses.module" />
-	  <EmbeddedResource Include="Rulesets\nav_courses.resources" />
-	  <EmbeddedResource Include="Rulesets\nav_departments.module" />
-	  <EmbeddedResource Include="Rulesets\nav_departments.resources" />
-	  <EmbeddedResource Include="Rulesets\nav_instructors.module" />
-	  <EmbeddedResource Include="Rulesets\nav_instructors.resources" />
-	  <EmbeddedResource Include="Rulesets\nav_students.module" />
-	  <EmbeddedResource Include="Rulesets\nav_students.resources" />
-	  <EmbeddedResource Include="Rulesets\paging_selector_courses.module" />
-	  <EmbeddedResource Include="Rulesets\paging_selector_courses.resources" />
-	  <EmbeddedResource Include="Rulesets\paging_selector_departments.module" />
-	  <EmbeddedResource Include="Rulesets\paging_selector_departments.resources" />
-	  <EmbeddedResource Include="Rulesets\paging_selector_instructors.module" />
-	  <EmbeddedResource Include="Rulesets\paging_selector_instructors.resources" />
-	  <EmbeddedResource Include="Rulesets\paging_selector_students.module" />
-	  <EmbeddedResource Include="Rulesets\paging_selector_students.resources" />
-	  <EmbeddedResource Include="Rulesets\students.module" />
-	  <EmbeddedResource Include="Rulesets\students.resources" />
-	  <EmbeddedResource Include="Rulesets\VariablesMetadata.xml" />
+	  <EmbeddedResource Include="appsettings.json" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -154,6 +74,7 @@
 		<PackageReference Include="LogicBuilder.App.Bsl.Business" Version="1.0.3" />
 		<PackageReference Include="LogicBuilder.App.Maui.Forms.Configuration" Version="1.0.6-alpha.0.1" />
 		<PackageReference Include="LogicBuilder.EntityFrameworkCore" Version="8.0.3" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.11" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.60" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.60" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />

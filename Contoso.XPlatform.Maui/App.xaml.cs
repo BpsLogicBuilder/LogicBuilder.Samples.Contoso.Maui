@@ -1,4 +1,5 @@
 ﻿using Contoso.XPlatform.Views;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
@@ -8,9 +9,10 @@ namespace Contoso.XPlatform
 {
     public partial class App : Application
     {
-        public App()
+        public App(IConfiguration configuration)
         {
             InitializeComponent();
+            BASE_URL = configuration["BASE_URL"]!?? throw new InvalidOperationException("BASE_URL is not configured");
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
@@ -23,7 +25,7 @@ namespace Contoso.XPlatform
             //return new Microsoft.Maui.Controls.Window(App.ServiceProvider.GetRequiredService<ExtendedSplashView>())
         }
 
-        public const string BASE_URL = "https://contosoapibps.azurewebsites.net/";
+        public static string BASE_URL { get; set; } = "";
 
 
         #region Properties

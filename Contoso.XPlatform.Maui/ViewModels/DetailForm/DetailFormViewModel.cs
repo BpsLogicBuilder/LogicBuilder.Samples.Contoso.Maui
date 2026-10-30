@@ -146,7 +146,7 @@ namespace Contoso.XPlatform.ViewModels.DetailForm
 
         private void Edit(CommandButtonDescriptor button)
         {
-            SetEntityAndNavigateNext(button);
+            _ = SetEntityAndNavigateNext(button);
         }
 
         private async Task GetEntity()
@@ -191,7 +191,7 @@ namespace Contoso.XPlatform.ViewModels.DetailForm
             );
         }
 
-        private void SetEntityAndNavigateNext(CommandButtonDescriptor button)
+        private async Task SetEntityAndNavigateNext(CommandButtonDescriptor button)
         {
             if (entity == null)
                 throw new ArgumentException($"{nameof(entity)}: {{97F661A5-1AE3-4A85-8083-438B665A58B7}}");
@@ -205,7 +205,7 @@ namespace Contoso.XPlatform.ViewModels.DetailForm
                 this.entity
             );
 
-            flowManagerService.Next
+            await flowManagerService.Next
             (
                 new CommandButtonRequest
                 {

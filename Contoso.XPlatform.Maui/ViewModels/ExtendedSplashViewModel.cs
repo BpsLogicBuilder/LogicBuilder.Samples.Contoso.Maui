@@ -46,8 +46,8 @@ namespace Contoso.XPlatform.ViewModels
         {
             RulesCache cache = new(new ConcurrentDictionary<string, RuleEngine>(), new ConcurrentDictionary<string, string>());
 
-            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(ExtendedSplashViewModel)).Assembly;
-            string[] uwpResources = ExtendedSplashViewModel.GetResourceStrings(assembly);
+            var assembly = typeof(FlowActivity).Assembly;
+            string[] uwpResources = GetResourceStrings(assembly);
 
             Dictionary<string, string> rules = uwpResources
                                                 .Where(f => f.EndsWith(".module"))
@@ -78,33 +78,31 @@ namespace Contoso.XPlatform.ViewModels
 
             return cache;
 
-            Task LoadRules(RulesModule module)
+            async Task LoadRules(RulesModule module)
             {
-                return Task.Run(() =>
-                {
-                    rulesLoader.LoadRules
+                await rulesLoader.LoadRules
+                (
+                    module,
+                    cache,
+                    new RulesLoaderRequest
                     (
-                        module, 
-                        cache, 
-                        new RulesLoaderRequest
-                        (
-                            "Contoso.XPlatform.Rulesets",
-                            typeof(FlowActivity),
-                            [
-                                typeof(LogicBuilder.App.Utils.Interfaces.ITypeHelper).Assembly,
-                                typeof(LogicBuilder.App.Maui.Forms.Parameters.CommandButtonParameters).Assembly,
-                                typeof(LogicBuilder.App.Maui.Forms.Configuration.CommandButtonDescriptor).Assembly,
-                                typeof(LogicBuilder.Forms.Parameters.Expansions.SelectExpandDefinitionParameters).Assembly,
-                                typeof(Domain.Entities.StudentModel).Assembly,
-                                typeof(Data.Entities.Course).Assembly,
-                                typeof(DirectorBase).Assembly,
-                                typeof(string).Assembly
-                            ]
-                        )
-                    );
-                    count++;
-                    Progress = (double)count / rules.Count;
-                });
+                        "Contoso.XPlatform.Flow.Rulesets",
+                        typeof(FlowActivity),
+                        [
+                            typeof(LogicBuilder.App.Utils.Interfaces.ITypeHelper).Assembly,
+                            typeof(LogicBuilder.App.Maui.Forms.Parameters.CommandButtonParameters).Assembly,
+                            typeof(LogicBuilder.App.Maui.Forms.Configuration.CommandButtonDescriptor).Assembly,
+                            typeof(LogicBuilder.Forms.Parameters.Expansions.SelectExpandDefinitionParameters).Assembly,
+                            typeof(Domain.Entities.StudentModel).Assembly,
+                            typeof(Data.Entities.Course).Assembly,
+                            typeof(DirectorBase).Assembly,
+                            typeof(string).Assembly
+                        ]
+                    )
+                );
+
+                count++;
+                Progress = (double)count / rules.Count;
             }
 
             string GetKey(string fullResourceName)
@@ -117,7 +115,7 @@ namespace Contoso.XPlatform.ViewModels
                     (
                         res => res.StartsWith
                         (
-                            $"Contoso.XPlatform.Rulesets.",
+                            $"Contoso.XPlatform.Flow.Rulesets.",
                             StringComparison.InvariantCultureIgnoreCase
                         )
                     )];

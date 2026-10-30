@@ -129,7 +129,7 @@ namespace Contoso.XPlatform.ViewModels.Validatables
                         item,
                         this.itemBindings
                     )
-                ).ToDictionary(k => k.Key, v => v.Value) ?? new Dictionary<Dictionary<string, IReadOnly>, E>();
+                ).ToDictionary(k => k.Key, v => v.Value) ?? [];
 
                 this.Items = new ObservableCollection<Dictionary<string, IReadOnly>>
                 (

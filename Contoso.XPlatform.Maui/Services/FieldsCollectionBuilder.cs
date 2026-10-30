@@ -461,7 +461,7 @@ namespace Contoso.XPlatform.Services
 
             MethodInfo closedGenericMethod = openGenericMethod.MakeGenericMethod(Type.GetType(fieldType) ?? throw new InvalidOperationException("{ED000BF8-9CD9-43DC-991F-C74E1C094C7E}"));
 
-            return (IValidationRule)(closedGenericMethod.Invoke(this, [validator, field, defaultValue, this.ValidationMessages, formLayout.Properties]) ?? throw new InvalidOperationException("{CD65E741-5C5D-4BCD-B839-4C3F3FB00E71}"));
+            return (IValidationRule)(closedGenericMethod.Invoke(new ValidatorRuleFactory(this.parentName), [validator, field, defaultValue, this.ValidationMessages, formLayout.Properties]) ?? throw new InvalidOperationException("{CD65E741-5C5D-4BCD-B839-4C3F3FB00E71}"));
         }
 
         private void ValidateSettingType(string fullPropertyName, string settingFieldType)

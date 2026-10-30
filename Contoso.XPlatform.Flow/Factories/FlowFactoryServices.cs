@@ -1,10 +1,11 @@
-﻿using LogicBuilder.RulesDirector;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Contoso.XPlatform.Flow;
+using Contoso.XPlatform.Flow.Factories;
+using LogicBuilder.RulesDirector;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Contoso.XPlatform.Flow.Factories
+#pragma warning disable IDE0130 // Microsoft recommended namespace for service registrations
+namespace Microsoft.Extensions.DependencyInjection
+#pragma warning restore IDE0130 // Microsoft recommended namespace for service registrations
 {
     internal static class FlowFactoryServices
     {

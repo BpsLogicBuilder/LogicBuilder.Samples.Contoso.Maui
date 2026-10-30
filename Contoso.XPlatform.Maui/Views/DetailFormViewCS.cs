@@ -90,7 +90,7 @@ namespace Contoso.XPlatform.Views
                         Label.TextProperty,
                         GetLabelBinding
                         (
-                            detailFormEntityViewModel.FormSettings.SubtitleBindings ?? throw new InvalidOperationException("SubtitleBindings cannot be null"),
+                            detailFormEntityViewModel.FormSettings.SubtitleBindings,
                             $"{nameof(DetailFormViewModelBase.FormSettings)}.{nameof(DataFormSettingsDescriptor.Title)}"
                         )
                     )

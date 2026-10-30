@@ -72,7 +72,7 @@ namespace Contoso.XPlatform.Views
                                                 .AddBinding
                                                 (
                                                     Label.TextProperty,
-                                                    GetHeaderBinding(controlBox.HeaderBindings ?? throw new InvalidOperationException($"{nameof(controlBox.HeaderBindings)} cannot be null."), $"{nameof(ControlGroupBox.GroupHeader)}")
+                                                    GetHeaderBinding(controlBox.HeaderBindings, $"{nameof(ControlGroupBox.GroupHeader)}")
                                                 )
                                             );
                                             stackLayout.Children.Add
@@ -125,7 +125,7 @@ namespace Contoso.XPlatform.Views
             this.BackgroundColor = Colors.Transparent;
             this.BindingContext = this.formValidatable;
 
-            static BindingBase GetHeaderBinding(MultiBindingDescriptor multiBindingDescriptor, string bindingName)
+            static BindingBase GetHeaderBinding(MultiBindingDescriptor? multiBindingDescriptor, string bindingName)
             {
                 if (multiBindingDescriptor == null)
                     return new Binding(bindingName);

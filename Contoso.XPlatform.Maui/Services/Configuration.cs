@@ -12,38 +12,44 @@ namespace Microsoft.Extensions.DependencyInjection
     internal static class Configuration
     {
         internal static IServiceCollection AddServices(this IServiceCollection services)
-            => services
-                .AddSingleton<IUiNotificationService, UiNotificationService>()
-                .AddSingleton<ICollectionCellManager, CollectionCellManager>()
-                .AddSingleton<IEntityStateUpdater, EntityStateUpdater>()
-                .AddSingleton<IEntityUpdater, EntityUpdater>()
-                .AddSingleton<IPropertiesUpdater, PropertiesUpdater>()
-                .AddSingleton<IReadOnlyPropertiesUpdater, ReadOnlyPropertiesUpdater>()
-                .AddSingleton<IReadOnlyCollectionCellPropertiesUpdater, ReadOnlyCollectionCellPropertiesUpdater>()
-                .AddAutoMapperServices()
-                .AddHttpClient()
-                .AddSingleton<IHttpService, HttpService>()
-                .AddSingleton<IConverterFactory, ConverterFactory>()
-                .AddAppUtilsServices()
-                .AddRulesCacheService
+        {
+            return services
+                    .AddSingleton<IUiNotificationService, UiNotificationService>()
+                    .AddSingleton<ICollectionCellManager, CollectionCellManager>()
+                    .AddSingleton<IEntityStateUpdater, EntityStateUpdater>()
+                    .AddSingleton<IEntityUpdater, EntityUpdater>()
+                    .AddSingleton<IPropertiesUpdater, PropertiesUpdater>()
+                    .AddSingleton<IReadOnlyPropertiesUpdater, ReadOnlyPropertiesUpdater>()
+                    .AddSingleton<IReadOnlyCollectionCellPropertiesUpdater, ReadOnlyCollectionCellPropertiesUpdater>()
+                    .AddAutoMapperServices()
+                    .AddHttpClient()
+                    .AddSingleton<IHttpService, HttpService>()
+                    .AddSingleton<IConverterFactory, ConverterFactory>()
+                    .AddAppUtilsServices()
+                    .AddTransient<IPagingSelectorBuilder, PagingSelectorBuilder>()/*must be transient - should not create scoped service from a singleton context*/
+                    .AddTransient<IScopedFlowManagerService, ScopedFlowManagerService>();
+        }
+
+        internal static IServiceCollection AddRulesCache(this IServiceCollection services)
+        {
+            return services.AddRulesCacheService
+            (
+                new RulesLoaderRequest
                 (
-                    new RulesLoaderRequest
-                    (
-                        "Contoso.XPlatform.Rulesets",
-                        typeof(FlowActivity),
-                        [
-                            typeof(LogicBuilder.App.Utils.Interfaces.ITypeHelper).Assembly,
-                            typeof(LogicBuilder.App.Maui.Forms.Parameters.CommandButtonParameters).Assembly,
-                            typeof(LogicBuilder.App.Maui.Forms.Configuration.CommandButtonDescriptor).Assembly,
-                            typeof(LogicBuilder.Forms.Parameters.Expansions.SelectExpandDefinitionParameters).Assembly,
-                            typeof(Contoso.Domain.Entities.StudentModel).Assembly,
-                            typeof(Contoso.Data.Entities.Course).Assembly,
-                            typeof(DirectorBase).Assembly,
-                            typeof(string).Assembly
-                        ]
-                    )
+                    "Contoso.XPlatform.Flow.Rulesets",
+                    typeof(FlowActivity),
+                    [
+                        typeof(LogicBuilder.App.Utils.Interfaces.ITypeHelper).Assembly,
+                        typeof(LogicBuilder.App.Maui.Forms.Parameters.CommandButtonParameters).Assembly,
+                        typeof(LogicBuilder.App.Maui.Forms.Configuration.CommandButtonDescriptor).Assembly,
+                        typeof(LogicBuilder.Forms.Parameters.ConnectorParameters).Assembly,
+                        typeof(Contoso.Domain.Entities.StudentModel).Assembly,
+                        typeof(Contoso.Data.Entities.Course).Assembly,
+                        typeof(DirectorBase).Assembly,
+                        typeof(string).Assembly
+                    ]
                 )
-                .AddTransient<IPagingSelectorBuilder, PagingSelectorBuilder>()/*must be transient - should not create scoped service from a singleton context*/
-                .AddTransient<IScopedFlowManagerService, ScopedFlowManagerService>();
+            );
+        }
     }
 }

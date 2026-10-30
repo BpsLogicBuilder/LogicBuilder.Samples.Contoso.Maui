@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Contoso.XPlatform.ViewModels.EditForm
@@ -47,14 +48,14 @@ namespace Contoso.XPlatform.ViewModels.EditForm
 
         protected static void Next(CommandButtonDescriptor button)
         {
-            EditFormViewModelBase.NavigateNext(button);
+            _ = NavigateNext(button);
         }
 
-        private static void NavigateNext(CommandButtonDescriptor button)
+        private static async Task NavigateNext(CommandButtonDescriptor button)
         {
             using IScopedFlowManagerService flowManagerService = App.ServiceProvider.GetRequiredService<IScopedFlowManagerService>();
             flowManagerService.CopyFlowItems();
-            flowManagerService.Next
+            await flowManagerService.Next
             (
                 new CommandButtonRequest
                 {

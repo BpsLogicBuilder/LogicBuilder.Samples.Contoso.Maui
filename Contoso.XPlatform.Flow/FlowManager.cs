@@ -1,15 +1,12 @@
-﻿using AutoMapper;
-using Contoso.XPlatform.Flow.Cache;
+﻿using Contoso.XPlatform.Flow.Cache;
 using Contoso.XPlatform.Flow.Factories;
 using Contoso.XPlatform.Flow.Requests;
 using Contoso.XPlatform.Flow.Settings;
 using Contoso.XPlatform.Flow.Settings.Screen;
-using LogicBuilder.App.Maui.Forms.Configuration;
 using LogicBuilder.App.Maui.Forms.Configuration.Navigation;
 using LogicBuilder.App.Maui.Forms.Configuration.TextForm;
 using LogicBuilder.RulesDirector;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -54,11 +51,8 @@ namespace Contoso.XPlatform.Flow
             (
                 ((Director)this.Director).FlowState,
                 FlowDataCache,
-                screenData.ScreenSettings ?? throw new InvalidOperationException("ScreenSettings cannot be null")
+                screenData.ScreenSettings
             );
-
-        
-
         #endregion Properties
 
         #region Methods

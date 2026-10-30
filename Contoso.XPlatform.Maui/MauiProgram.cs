@@ -3,6 +3,7 @@ using Akavache.Sqlite3;
 using Akavache.SystemTextJson;
 using Contoso.XPlatform.Constants;
 using Contoso.XPlatform.Directives;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Devices;
@@ -41,6 +42,14 @@ namespace Contoso.XPlatform
                     fonts.AddFont("OpenSans_Semibold.ttf", "OpenSansSemibold");
                 });
 
+            using var stream = typeof(MauiProgram).Assembly.GetManifestResourceStream("Contoso.XPlatform.appsettings.json");
+
+            var configBuilder = new ConfigurationBuilder();
+            if (stream != null)
+                configBuilder.AddJsonStream(stream);
+            IConfiguration configuration = configBuilder.Build();
+            builder.Configuration.AddConfiguration(configuration);
+
             AppBuilder.CreateSplatBuilder()
                 .WithAkavacheCacheDatabase<SystemJsonSerializer>
                 (
@@ -50,6 +59,8 @@ namespace Contoso.XPlatform
                 );
 
             return builder.Build();
+
+            
         }
 
         public static void Init(Action<IServiceCollection> platformConfigurationServices)
@@ -73,7 +84,7 @@ namespace Contoso.XPlatform
                  * 2) In App.CreateWindow(), replace return new Microsoft.Maui.Controls.Window(ServiceProvider.GetRequiredService<MainPageView>()) 
                  *          with return new Microsoft.Maui.Controls.Window(App.ServiceProvider.GetRequiredService<ExtendedSplashView>())
                  */
-                //.AddRulesCache()
+                .AddRulesCache()
                 .AddViewModels()
                 .AddViews();
         }

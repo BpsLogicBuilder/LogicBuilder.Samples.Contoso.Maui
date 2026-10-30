@@ -67,10 +67,10 @@ namespace Contoso.XPlatform.ViewModels.Validatables
         {
             get
             {
-                if (_selectedItem == null || Items == null || Items.Count == 0)
+                if (Items == null || Items.Count == 0)
                     return null;
 
-                return Items.FirstOrDefault
+                _selectedItem = Items.FirstOrDefault
                 (
                     i => EqualityComparer<T>.Default.Equals
                     (
@@ -78,6 +78,8 @@ namespace Contoso.XPlatform.ViewModels.Validatables
                         genericsHelpers.GetPropertyValue<T>(i, _dropDownTemplate.ValueField)
                     )
                 );
+
+                return _selectedItem;
             }
 
             set

@@ -46,14 +46,14 @@ namespace Contoso.XPlatform.ViewModels.DetailForm
 
         protected static void Next(CommandButtonDescriptor button)
         {
-            NavigateNext(button);
+            _ = NavigateNext(button);
         }
 
-        protected static Task NavigateNext(CommandButtonDescriptor button)
+        protected static async Task NavigateNext(CommandButtonDescriptor button)
         {
             using IScopedFlowManagerService flowManagerService = App.ServiceProvider.GetRequiredService<IScopedFlowManagerService>();
             flowManagerService.CopyFlowItems();
-            return flowManagerService.Next
+            await flowManagerService.Next
             (
                 new CommandButtonRequest
                 {

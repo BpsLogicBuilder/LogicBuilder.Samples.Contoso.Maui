@@ -8,13 +8,14 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class FlowServices
     {
-        public static IServiceCollection AddFlowServices(this IServiceCollection services) 
+        public static IServiceCollection AddFlowServices(this IServiceCollection services)
             => services
                 .AddScoped<IFlowManager, FlowManager>()
                 .AddScoped<FlowDataCache>()
                 .AddScoped<ScreenData>()
                 .AddScoped<Progress>()
                 .AddScoped<IDialogFunctions, DialogFunctions>()
-                .AddScoped<IActions, Actions>();
+                .AddScoped<IActions, Actions>()
+                .AddFlowFactories();
     }
 }
