@@ -1,5 +1,5 @@
-﻿using Contoso.XPlatform.Flow.Settings.Screen;
-using Contoso.XPlatform.ViewModels.SearchPage;
+﻿using Contoso.XPlatform.ViewModels.SearchPage;
+using LogicBuilder.App.Maui.Business.Settings.Screen;
 using Microsoft.Maui.Controls;
 using System;
 

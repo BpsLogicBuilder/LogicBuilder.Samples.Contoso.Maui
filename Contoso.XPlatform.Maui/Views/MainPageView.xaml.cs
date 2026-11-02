@@ -1,8 +1,9 @@
 using AutoMapper;
-using Contoso.XPlatform.Flow.Settings;
 using Contoso.XPlatform.Services;
 using Contoso.XPlatform.ViewModels;
 using Contoso.XPlatform.Views.Factories;
+using LogicBuilder.App.Maui.Business.Requests;
+using LogicBuilder.App.Maui.Business.Settings;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;
@@ -155,7 +156,7 @@ public partial class MainPageView : FlyoutPage
         flowManagerService.CopyPersistentFlowItems();
         await flowManagerService.NewFlowStart
         (
-            new Flow.Requests.NewFlowRequest { InitialModuleName = item.InitialModule }
+            new NewFlowRequest { InitialModuleName = item.InitialModule }
         );
 
         static void DisposeCurrentPageBindingContext(Page detail)

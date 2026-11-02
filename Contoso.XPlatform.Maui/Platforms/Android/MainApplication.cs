@@ -1,6 +1,6 @@
 ﻿using Android.App;
 using Android.Runtime;
-using Contoso.XPlatform.Flow;
+using LogicBuilder.App.Maui.Utils.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui;
 using Microsoft.Maui.Hosting;

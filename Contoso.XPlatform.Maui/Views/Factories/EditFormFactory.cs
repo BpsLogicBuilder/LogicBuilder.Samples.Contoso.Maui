@@ -1,5 +1,5 @@
-﻿using Contoso.XPlatform.Flow.Settings.Screen;
-using Contoso.XPlatform.ViewModels.EditForm;
+﻿using Contoso.XPlatform.ViewModels.EditForm;
+using LogicBuilder.App.Maui.Business.Settings.Screen;
 using Microsoft.Maui.Controls;
 using System;
 
