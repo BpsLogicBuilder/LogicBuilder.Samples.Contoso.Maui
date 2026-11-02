@@ -1,5 +1,7 @@
 ﻿using Contoso.XPlatform.Flow;
-using Contoso.XPlatform.Flow.Factories;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.Utils.Factories;
+using LogicBuilder.App.Maui.Utils.Interfaces;
 using LogicBuilder.RulesDirector;
 using System;
 

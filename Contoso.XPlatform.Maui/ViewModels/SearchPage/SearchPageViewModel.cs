@@ -1,10 +1,10 @@
-﻿using Contoso.XPlatform.Flow.Requests;
-using Contoso.XPlatform.Flow.Settings.Screen;
-using Contoso.XPlatform.Services;
+﻿using Contoso.XPlatform.Services;
 using Contoso.XPlatform.Utils;
 using Contoso.XPlatform.ViewModels.ReadOnlys;
 using LogicBuilder.App.Bsl.Business.Requests;
 using LogicBuilder.App.Bsl.Business.Responses;
+using LogicBuilder.App.Maui.Business.Requests;
+using LogicBuilder.App.Maui.Business.Settings.Screen;
 using LogicBuilder.App.Maui.Forms.Configuration;
 using LogicBuilder.App.Maui.Forms.Configuration.Bindings;
 using LogicBuilder.App.Maui.Forms.Configuration.SearchForm;

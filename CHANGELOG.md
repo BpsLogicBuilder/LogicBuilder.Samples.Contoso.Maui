@@ -1,3 +1,4 @@
+* 2026-10-30 - AB#180: Move flow classes to a common library.
 * 2026-10-30 - AB#180: change log.
 * 2026-10-30 - AB#180: All screens working.
 * 2026-10-26 - AB#180: Add flow project.

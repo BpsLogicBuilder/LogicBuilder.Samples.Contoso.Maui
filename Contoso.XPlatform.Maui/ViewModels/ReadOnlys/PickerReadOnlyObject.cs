@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Flow.Requests;
 using Contoso.XPlatform.Services;
 using LogicBuilder.App.Bsl.Business.Requests;
 using LogicBuilder.App.Bsl.Business.Responses;
+using LogicBuilder.App.Maui.Business.Requests;
 using LogicBuilder.App.Maui.Forms.Configuration;
 using LogicBuilder.App.Utils.Interfaces;
 using LogicBuilder.Expressions.Utils.ExpressionDescriptors;

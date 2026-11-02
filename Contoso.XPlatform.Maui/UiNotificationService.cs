@@ -1,4 +1,4 @@
-﻿using Contoso.XPlatform.Flow.Settings;
+﻿using LogicBuilder.App.Maui.Business.Settings;
 using System.Reactive.Subjects;
 
 namespace Contoso.XPlatform

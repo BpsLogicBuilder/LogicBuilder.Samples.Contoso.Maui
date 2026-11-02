@@ -1,4 +1,5 @@
-﻿using LogicBuilder.RulesDirector;
+﻿using LogicBuilder.App.Maui.Utils.Interfaces;
+using LogicBuilder.RulesDirector;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;

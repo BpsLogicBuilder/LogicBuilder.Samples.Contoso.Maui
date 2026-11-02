@@ -1,5 +1,5 @@
-﻿using Contoso.XPlatform.Flow;
-using Contoso.XPlatform.Flow.Requests;
+﻿using LogicBuilder.App.Maui.Business.Requests;
+using LogicBuilder.App.Maui.Utils.Interfaces;
 using System;
 using System.Threading.Tasks;
 

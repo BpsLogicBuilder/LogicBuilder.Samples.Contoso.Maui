@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Contoso.XPlatform;
 using Contoso.XPlatform.Directives.Factories;
-using Contoso.XPlatform.Flow.Settings.Screen;
 using Contoso.XPlatform.Services;
 using Contoso.XPlatform.ViewModels;
 using Contoso.XPlatform.ViewModels.DetailForm;
@@ -10,6 +9,7 @@ using Contoso.XPlatform.ViewModels.Factories;
 using Contoso.XPlatform.ViewModels.ListPage;
 using Contoso.XPlatform.ViewModels.SearchPage;
 using Contoso.XPlatform.ViewModels.TextPage;
+using LogicBuilder.App.Maui.Business.Settings.Screen;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using LogicBuilder.App.Maui.Forms.Configuration.ListForm;
 using LogicBuilder.App.Maui.Forms.Configuration.SearchForm;

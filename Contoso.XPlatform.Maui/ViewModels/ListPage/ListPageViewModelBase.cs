@@ -1,4 +1,4 @@
-﻿using Contoso.XPlatform.Flow.Settings.Screen;
+﻿using LogicBuilder.App.Maui.Business.Settings.Screen;
 using LogicBuilder.App.Maui.Forms.Configuration;
 using LogicBuilder.App.Maui.Forms.Configuration.ListForm;
 using System;

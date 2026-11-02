@@ -1,7 +1,8 @@
-﻿using Contoso.XPlatform.Flow;
-using Contoso.XPlatform.Flow.Requests;
-using Contoso.XPlatform.Flow.Settings;
+﻿using LogicBuilder.App.Maui.Business.Requests;
+using LogicBuilder.App.Maui.Business.Settings;
 using LogicBuilder.App.Maui.Forms.Configuration.Navigation;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.Utils.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
