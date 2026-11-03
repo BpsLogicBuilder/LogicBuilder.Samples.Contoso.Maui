@@ -47,7 +47,7 @@ namespace Contoso.XPlatform
             var configBuilder = new ConfigurationBuilder();
             if (stream != null)
                 configBuilder.AddJsonStream(stream);
-            IConfiguration configuration = configBuilder.Build();
+            configuration = configBuilder.Build();
             builder.Configuration.AddConfiguration(configuration);
 
             AppBuilder.CreateSplatBuilder()
@@ -63,6 +63,8 @@ namespace Contoso.XPlatform
             
         }
 
+        static IConfiguration? configuration;
+
         public static void Init(Action<IServiceCollection> platformConfigurationServices)
         {
             var services = new ServiceCollection();
@@ -75,6 +77,8 @@ namespace Contoso.XPlatform
 
         private static void ConfigureServices(ServiceCollection services)
         {
+            if (configuration is not null)
+                services.AddSingleton(configuration);
             services
                 .AddServices()
                 .AddDirectiveServices()
@@ -86,7 +90,9 @@ namespace Contoso.XPlatform
                  */
                 .AddRulesCache()
                 .AddViewModels()
-                .AddViews();
+                .AddCommonViewModels()
+                .AddViews()
+                .AddCommonViews();
         }
     }
 }

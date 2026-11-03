@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Akavache.Sqlite3" Version="13.0.0" />
+		<PackageReference Include="Akavache.SystemTextJson" Version="13.0.0" />
+		<PackageReference Include="LogicBuilder.App.Bsl.Business" Version="1.0.3" />
+		<PackageReference Include="LogicBuilder.App.Maui.AutoMapperProfiles" Version="1.0.2" />
+		<PackageReference Include="LogicBuilder.App.Maui.Utils" Version="1.0.1" />
+		<PackageReference Include="LogicBuilder.App.Maui.Forms.Configuration" Version="1.1.0" />
+		<PackageReference Include="LogicBuilder.App.Utils" Version="1.0.9" />
+		<PackageReference Include="LogicBuilder.Domain" Version="8.0.1" />
+		<PackageReference Include="LogicBuilder.EntityFrameworkCore" Version="8.0.3" />
+		<PackageReference Include="LogicBuilder.RulesDirector" Version="2.0.6" />
+		<PackageReference Include="LogicBuilder.Structures" Version="8.1.1" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.14" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.120" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.120" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+		<PackageReference Include="Polly" Version="8.9.0" />
+		<PackageReference Include="System.Reactive" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\BusyIndicator.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Flyout.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MainPageView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MainPageViewDetail.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+</Project>

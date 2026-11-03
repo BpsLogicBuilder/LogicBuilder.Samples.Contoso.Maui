@@ -4,6 +4,7 @@
     <Project Path="Contoso.XPlatform.Maui/Contoso.XPlatform.Maui.csproj">
       <Deploy Solution="Debug|*" />
     </Project>
+    <Project Path="LogicBuilder.App.Maui/LogicBuilder.App.Maui.csproj" Id="059c694b-9ef9-4755-8f3d-aa1624312b0c" />
   </Folder>
   <Folder Name="/Business/">
     <Project Path="Contoso.Domain/Contoso.Domain.csproj" />
