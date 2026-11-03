@@ -5,7 +5,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Contoso.XPlatform.ViewModels.SearchPage
+namespace LogicBuilder.App.Maui.ViewModels.SearchPage
 {
     public partial class SearchPageViewModelBase : ViewModelBase, IDisposable
     {

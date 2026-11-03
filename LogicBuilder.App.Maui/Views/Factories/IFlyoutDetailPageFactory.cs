@@ -1,7 +1,7 @@
 ﻿using LogicBuilder.App.Maui.Business.Settings.Screen;
 using Microsoft.Maui.Controls;
 
-namespace Contoso.XPlatform.Views.Factories
+namespace LogicBuilder.App.Maui.Views.Factories
 {
     public interface IFlyoutDetailPageFactory
     {

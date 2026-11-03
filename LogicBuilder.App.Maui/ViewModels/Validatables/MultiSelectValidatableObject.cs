@@ -1,7 +1,7 @@
-﻿using Contoso.XPlatform.Services;
-using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.Validators;
-using Contoso.XPlatform.Views.Factories;
+﻿using LogicBuilder.App.Maui.Services;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.Validators;
+using LogicBuilder.App.Maui.Views.Factories;
 using LogicBuilder.App.Bsl.Business.Requests;
 using LogicBuilder.App.Bsl.Business.Responses;
 using LogicBuilder.App.Maui.Forms.Configuration;
@@ -16,7 +16,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Contoso.XPlatform.ViewModels.Validatables
+namespace LogicBuilder.App.Maui.ViewModels.Validatables
 {
     public partial class MultiSelectValidatableObject<T, E> : ValidatableObjectBase<T>, IHasItemsSourceValidatable where T : ObservableCollection<E>
     {

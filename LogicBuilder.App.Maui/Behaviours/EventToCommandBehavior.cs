@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Windows.Input;
 using Microsoft.Maui.Controls;
 
-namespace Contoso.XPlatform.Behaviours
+namespace LogicBuilder.App.Maui.Behaviours
 {
     public class EventToCommandBehavior : BehaviorBase<VisualElement>
     {

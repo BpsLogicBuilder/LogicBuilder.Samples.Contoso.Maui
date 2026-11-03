@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Contoso.XPlatform.ViewModels
+namespace LogicBuilder.App.Maui.ViewModels
 {
     public interface IHasItemsSource
     {

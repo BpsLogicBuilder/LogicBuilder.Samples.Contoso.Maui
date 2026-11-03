@@ -1,11 +1,11 @@
-﻿using Contoso.XPlatform.Directives.Factories;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
+﻿using LogicBuilder.App.Maui.Directives.Factories;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace Contoso.XPlatform.Directives
+namespace LogicBuilder.App.Maui.Directives
 {
     internal partial class ReadOnlyDirectiveManagers<TModel> : IReadOnlyDirectiveManagers
     {

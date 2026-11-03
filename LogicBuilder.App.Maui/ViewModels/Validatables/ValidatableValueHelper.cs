@@ -2,7 +2,7 @@
 using LogicBuilder.Expressions.Utils;
 using System;
 
-namespace Contoso.XPlatform.ViewModels.Validatables
+namespace LogicBuilder.App.Maui.ViewModels.Validatables
 {
     internal class ValidatableValueHelper : IValidatableValueHelper
     {

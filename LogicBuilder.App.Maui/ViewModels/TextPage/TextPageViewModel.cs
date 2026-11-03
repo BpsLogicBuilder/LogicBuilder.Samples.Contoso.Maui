@@ -1,4 +1,4 @@
-﻿using Contoso.XPlatform.Services;
+﻿using LogicBuilder.App.Maui.Services;
 using LogicBuilder.App.Maui.Business.Requests;
 using LogicBuilder.App.Maui.Business.Settings.Screen;
 using LogicBuilder.App.Maui.Forms.Configuration;
@@ -12,7 +12,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Contoso.XPlatform.ViewModels.TextPage
+namespace LogicBuilder.App.Maui.ViewModels.TextPage
 {
     public partial class TextPageViewModel : ViewModelBase, IDisposable
     {

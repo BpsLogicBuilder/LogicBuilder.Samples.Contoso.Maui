@@ -1,11 +1,11 @@
-﻿using Contoso.XPlatform.Validators;
+﻿using LogicBuilder.App.Maui.Validators;
 using Microsoft.Maui.Controls;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Contoso.XPlatform.ViewModels.Validatables
+namespace LogicBuilder.App.Maui.ViewModels.Validatables
 {
     public partial class EntryValidatableObject<T> : ValidatableObjectBase<T>, IHasStringFormat
     {

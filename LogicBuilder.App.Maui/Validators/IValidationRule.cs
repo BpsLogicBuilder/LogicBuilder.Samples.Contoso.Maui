@@ -1,7 +1,7 @@
-﻿using Contoso.XPlatform.ViewModels.Validatables;
+﻿using LogicBuilder.App.Maui.ViewModels.Validatables;
 using System.Collections.Generic;
 
-namespace Contoso.XPlatform.Validators
+namespace LogicBuilder.App.Maui.Validators
 {
     public interface IValidationRule
     {

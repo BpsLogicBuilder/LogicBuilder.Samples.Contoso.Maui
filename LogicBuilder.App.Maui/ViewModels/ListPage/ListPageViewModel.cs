@@ -1,6 +1,6 @@
-﻿using Contoso.XPlatform.Services;
-using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
+﻿using LogicBuilder.App.Maui.Services;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
 using LogicBuilder.App.Bsl.Business.Requests;
 using LogicBuilder.App.Bsl.Business.Responses;
 using LogicBuilder.App.Maui.Business.Settings.Screen;
@@ -12,7 +12,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Contoso.XPlatform.ViewModels.ListPage
+namespace LogicBuilder.App.Maui.ViewModels.ListPage
 {
     public partial class ListPageViewModel<TModel> : ListPageViewModelBase where TModel : class
     {

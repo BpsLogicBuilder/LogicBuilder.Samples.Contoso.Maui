@@ -1,8 +1,8 @@
-﻿using Contoso.XPlatform.ViewModels.ReadOnlys;
-using Contoso.XPlatform.ViewModels.Validatables;
+﻿using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
 using System;
 
-namespace Contoso.XPlatform.Views.Factories
+namespace LogicBuilder.App.Maui.Views.Factories
 {
     internal class PopupFormFactory(
         Func<IValidatable, ChildFormArrayPageCS> getChildFormArrayPage,

@@ -1,10 +1,10 @@
-﻿using Contoso.XPlatform.Validators;
+﻿using LogicBuilder.App.Maui.Validators;
 using System.Collections.Generic;
 using System.Windows.Input;
 using Microsoft.Maui.Controls;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Contoso.XPlatform.ViewModels.Validatables
+namespace LogicBuilder.App.Maui.ViewModels.Validatables
 {
     public partial class CheckboxValidatableObject : ValidatableObjectBase<bool>
     {

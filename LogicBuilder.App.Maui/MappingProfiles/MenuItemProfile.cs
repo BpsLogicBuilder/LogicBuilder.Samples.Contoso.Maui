@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.ViewModels;
+using LogicBuilder.App.Maui.ViewModels;
 using LogicBuilder.App.Maui.Forms.Configuration.Navigation;
 
-namespace Contoso.XPlatform.MappingProfiles
+namespace LogicBuilder.App.Maui.MappingProfiles
 {
     public class MenuItemProfile : Profile
     {

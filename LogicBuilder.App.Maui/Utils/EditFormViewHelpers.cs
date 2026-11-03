@@ -1,14 +1,14 @@
-﻿using Contoso.XPlatform.Behaviours;
-using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Converters;
-using Contoso.XPlatform.ViewModels;
-using Contoso.XPlatform.ViewModels.Validatables;
+﻿using LogicBuilder.App.Maui.Behaviours;
+using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.Converters;
+using LogicBuilder.App.Maui.ViewModels;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
 using LogicBuilder.App.Maui.Forms.Configuration;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Devices;
 using System;
 
-namespace Contoso.XPlatform.Utils
+namespace LogicBuilder.App.Maui.Utils
 {
     internal static class EditFormViewHelpers
     {

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Services;
-using Contoso.XPlatform.Validators;
+using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.Services;
+using LogicBuilder.App.Maui.Validators;
 using LogicBuilder.App.Bsl.Business.Requests;
 using LogicBuilder.App.Bsl.Business.Responses;
 using LogicBuilder.App.Maui.Business.Requests;
@@ -18,7 +18,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Contoso.XPlatform.ViewModels.Validatables
+namespace LogicBuilder.App.Maui.ViewModels.Validatables
 {
     public partial class PickerValidatableObject<T> : ValidatableObjectBase<T>, IHasItemsSourceValidatable, IHasDropDownTemplate
     {

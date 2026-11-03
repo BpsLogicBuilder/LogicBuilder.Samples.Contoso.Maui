@@ -1,12 +1,12 @@
-﻿using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
-using Contoso.XPlatform.ViewModels.ReadOnlys.Factories;
+﻿using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys.Factories;
 using LogicBuilder.App.Maui.Forms.Configuration.Bindings;
 using LogicBuilder.Expressions.Utils;
 using System;
 using System.Collections.Generic;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public class CollectionCellItemsBuilder(
         IReadOnlyFactory readOnlyFactory,

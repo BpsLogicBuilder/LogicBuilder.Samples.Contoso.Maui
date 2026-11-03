@@ -1,13 +1,13 @@
-﻿using Contoso.XPlatform.Converters;
-using Contoso.XPlatform.ViewModels.DetailForm;
-using Contoso.XPlatform.ViewModels.EditForm;
-using Contoso.XPlatform.ViewModels.ListPage;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
-using Contoso.XPlatform.ViewModels.SearchPage;
-using Contoso.XPlatform.ViewModels.TextPage;
-using Contoso.XPlatform.ViewModels.Validatables;
-using Contoso.XPlatform.Views;
-using Contoso.XPlatform.Views.Factories;
+﻿using LogicBuilder.App.Maui.Converters;
+using LogicBuilder.App.Maui.ViewModels.DetailForm;
+using LogicBuilder.App.Maui.ViewModels.EditForm;
+using LogicBuilder.App.Maui.ViewModels.ListPage;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
+using LogicBuilder.App.Maui.ViewModels.SearchPage;
+using LogicBuilder.App.Maui.ViewModels.TextPage;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
+using LogicBuilder.App.Maui.Views;
+using LogicBuilder.App.Maui.Views.Factories;
 using System;
 
 #pragma warning disable IDE0130 // Microsoft recommended namespace for service registrations

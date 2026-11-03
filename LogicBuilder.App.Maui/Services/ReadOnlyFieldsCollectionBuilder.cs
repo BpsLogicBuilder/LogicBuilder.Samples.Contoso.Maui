@@ -1,16 +1,16 @@
-﻿using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels;
-using Contoso.XPlatform.ViewModels.Factories;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
-using Contoso.XPlatform.ViewModels.ReadOnlys.Factories;
+﻿using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels;
+using LogicBuilder.App.Maui.ViewModels.Factories;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys.Factories;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using LogicBuilder.Expressions.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public class ReadOnlyFieldsCollectionBuilder : IReadOnlyFieldsCollectionBuilder
     {

@@ -1,4 +1,4 @@
-﻿using Contoso.XPlatform.Views;
+﻿using LogicBuilder.App.Maui.Views;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui;

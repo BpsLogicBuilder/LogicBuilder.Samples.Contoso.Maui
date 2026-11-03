@@ -1,8 +1,8 @@
-﻿using Contoso.XPlatform.Directives;
-using Contoso.XPlatform.Directives.Factories;
-using Contoso.XPlatform.Services;
-using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels.Factories;
+﻿using LogicBuilder.App.Maui.Directives;
+using LogicBuilder.App.Maui.Directives.Factories;
+using LogicBuilder.App.Maui.Services;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels.Factories;
 using LogicBuilder.App.Bsl.Business.Requests;
 using LogicBuilder.App.Bsl.Business.Responses;
 using LogicBuilder.App.Maui.Business.Requests;
@@ -15,7 +15,7 @@ using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Contoso.XPlatform.ViewModels.DetailForm
+namespace LogicBuilder.App.Maui.ViewModels.DetailForm
 {
     public partial class DetailFormViewModel<TModel> : DetailFormViewModelBase, IDisposable where TModel : LogicBuilder.Domain.BaseModel
     {

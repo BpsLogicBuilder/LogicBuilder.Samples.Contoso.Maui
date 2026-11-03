@@ -2,7 +2,7 @@
 using System.Globalization;
 using Microsoft.Maui.Controls;
 
-namespace Contoso.XPlatform.Converters
+namespace LogicBuilder.App.Maui.Converters
 {
     public class InverseBoolConverter : IValueConverter
     {

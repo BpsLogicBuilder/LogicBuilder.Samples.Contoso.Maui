@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
+using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public class ReadOnlyPropertiesUpdater(IMapper mapper) : IReadOnlyPropertiesUpdater
     {

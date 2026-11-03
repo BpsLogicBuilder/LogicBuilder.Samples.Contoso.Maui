@@ -3,7 +3,7 @@ using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using System;
 using System.Collections.Generic;
 
-namespace Contoso.XPlatform.ViewModels.ReadOnlys.Factories
+namespace LogicBuilder.App.Maui.ViewModels.ReadOnlys.Factories
 {
     public interface IReadOnlyFactory
     {

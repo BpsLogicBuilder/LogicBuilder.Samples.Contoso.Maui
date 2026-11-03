@@ -1,4 +1,4 @@
-﻿namespace Contoso.XPlatform.Constants
+﻿namespace LogicBuilder.App.Maui.Constants
 {
     public struct FromGroupTemplateNames
     {

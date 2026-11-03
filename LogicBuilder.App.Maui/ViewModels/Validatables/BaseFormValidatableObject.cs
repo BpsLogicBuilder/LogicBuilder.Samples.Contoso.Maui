@@ -1,7 +1,7 @@
-﻿using Contoso.XPlatform.Directives;
-using Contoso.XPlatform.Services;
-using Contoso.XPlatform.Validators;
-using Contoso.XPlatform.Views.Factories;
+﻿using LogicBuilder.App.Maui.Directives;
+using LogicBuilder.App.Maui.Services;
+using LogicBuilder.App.Maui.Validators;
+using LogicBuilder.App.Maui.Views.Factories;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;
@@ -11,7 +11,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Windows.Input;
 
-namespace Contoso.XPlatform.ViewModels.Validatables
+namespace LogicBuilder.App.Maui.ViewModels.Validatables
 {
     public abstract partial class BaseFormValidatableObject<T>(string name, string templateName, IEnumerable<IValidationRule>? validations, IUiNotificationService uiNotificationService) : ValidatableObjectBase<T>(name, templateName, validations, uiNotificationService), IDisposable where T : class
     {

@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.ViewModels;
+using LogicBuilder.App.Maui.ViewModels;
 using LogicBuilder.App.Maui.Forms.Configuration.Directives;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Contoso.XPlatform.Directives
+namespace LogicBuilder.App.Maui.Directives
 {
     internal partial class ReloadIfManager<TModel> : IReloadIfManager
     {

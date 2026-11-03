@@ -1,6 +1,6 @@
-﻿using Contoso.XPlatform.Validators;
+﻿using LogicBuilder.App.Maui.Validators;
 
-namespace Contoso.XPlatform.Directives
+namespace LogicBuilder.App.Maui.Directives
 {
     public class ValidateIf<T> : ConditionBase<T>
     {

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Directives;
-using Contoso.XPlatform.Directives.Factories;
-using Contoso.XPlatform.ViewModels.Validatables;
+using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.Directives;
+using LogicBuilder.App.Maui.Directives.Factories;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using LogicBuilder.App.Maui.Forms.Configuration.Directives;
 using LogicBuilder.Expressions.Utils.ExpressionBuilder.Lambda;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public class ValidateIfConditionalDirectiveBuilder<TModel>(IDirectiveManagersFactory directiveManagersFactory, IMapper mapper, IFormGroupSettings formGroupSettings, IEnumerable<IValidatable> properties, List<ValidateIf<TModel>>? parentList = null, string? parentName = null) : IConditionalDirectiveBuilder<ValidateIf<TModel>, TModel>
     {

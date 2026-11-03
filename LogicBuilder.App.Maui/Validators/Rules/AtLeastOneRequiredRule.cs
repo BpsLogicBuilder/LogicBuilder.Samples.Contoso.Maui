@@ -1,9 +1,9 @@
-﻿using Contoso.XPlatform.ViewModels.Validatables;
+﻿using LogicBuilder.App.Maui.ViewModels.Validatables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Contoso.XPlatform.Validators.Rules
+namespace LogicBuilder.App.Maui.Validators.Rules
 {
     public record AtLeastOneRequiredRule<T> : ValidationRuleBase<T>
     {

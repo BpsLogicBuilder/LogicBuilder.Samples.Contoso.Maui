@@ -1,6 +1,6 @@
 using Microsoft.Maui.Controls;
 
-namespace Contoso.XPlatform.Views;
+namespace LogicBuilder.App.Maui.Views;
 
 public partial class MainPageViewDetail : ContentPage
 {

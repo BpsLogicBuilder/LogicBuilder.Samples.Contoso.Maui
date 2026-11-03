@@ -1,12 +1,12 @@
-﻿using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels.Validatables;
+﻿using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
 using LogicBuilder.App.Maui.Forms.Configuration;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace Contoso.XPlatform.ViewModels
+namespace LogicBuilder.App.Maui.ViewModels
 {
     public partial class ControlGroupBox(IFormGroupBoxSettings groupBoxSettings) : ObservableCollection<IValidatable>([])
     {

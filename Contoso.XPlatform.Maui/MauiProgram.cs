@@ -2,7 +2,7 @@
 using Akavache.Sqlite3;
 using Akavache.SystemTextJson;
 using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Directives;
+using LogicBuilder.App.Maui.Constants;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui.Controls.Hosting;

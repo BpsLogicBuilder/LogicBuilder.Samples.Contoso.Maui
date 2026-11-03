@@ -1,6 +1,6 @@
-﻿using Contoso.XPlatform.ViewModels;
+﻿using LogicBuilder.App.Maui.ViewModels;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public interface IReadOnlyFieldsCollectionBuilder
     {

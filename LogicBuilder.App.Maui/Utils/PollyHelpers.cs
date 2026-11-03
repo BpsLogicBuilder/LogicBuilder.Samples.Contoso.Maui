@@ -3,7 +3,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Contoso.XPlatform.Utils
+namespace LogicBuilder.App.Maui.Utils
 {
     public static class PollyHelpers
     {

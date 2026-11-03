@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Contoso.XPlatform.Views.MainPageView"
-             xmlns:pages="clr-namespace:Contoso.XPlatform.Views"
+             x:Class="LogicBuilder.App.Maui.Views.MainPageView"
+             xmlns:pages="clr-namespace:LogicBuilder.App.Maui.Views"
              Title="MainPageView">
     <FlyoutPage.Flyout>
         <pages:Flyout x:Name="flyout" />

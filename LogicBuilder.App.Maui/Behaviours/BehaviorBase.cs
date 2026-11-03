@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Maui.Controls;
 
-namespace Contoso.XPlatform.Behaviours
+namespace LogicBuilder.App.Maui.Behaviours
 {
     public class BehaviorBase<T> : Behavior<T> where T : BindableObject
     {

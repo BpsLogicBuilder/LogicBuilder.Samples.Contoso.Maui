@@ -1,7 +1,7 @@
-﻿using Contoso.XPlatform.Constants;
+﻿using LogicBuilder.App.Maui.Constants;
 using Microsoft.Maui.Controls;
 
-namespace Contoso.XPlatform.Behaviours
+namespace LogicBuilder.App.Maui.Behaviours
 {
     public class EntryLineValidationBehavior : BehaviorBase<Entry>
     {

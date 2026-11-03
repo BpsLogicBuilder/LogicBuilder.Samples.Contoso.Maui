@@ -1,7 +1,7 @@
 ﻿using LogicBuilder.App.Maui.Forms.Configuration.Validation;
 using System;
 
-namespace Contoso.XPlatform.ViewModels.Validatables
+namespace LogicBuilder.App.Maui.ViewModels.Validatables
 {
     public interface IValidatableValueHelper
     {

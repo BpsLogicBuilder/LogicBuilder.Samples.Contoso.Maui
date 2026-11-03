@@ -1,6 +1,6 @@
-﻿using Contoso.XPlatform.Services;
+﻿using LogicBuilder.App.Maui.Services;
 
-namespace Contoso.XPlatform.ViewModels.ReadOnlys
+namespace LogicBuilder.App.Maui.ViewModels.ReadOnlys
 {
     public class HiddenReadOnlyObject<T> : ReadOnlyObjectBase<T>
     {

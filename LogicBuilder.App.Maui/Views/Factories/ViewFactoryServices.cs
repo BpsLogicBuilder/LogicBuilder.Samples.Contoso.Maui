@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Contoso.XPlatform.Views.Factories
+namespace LogicBuilder.App.Maui.Views.Factories
 {
     internal static class ViewFactoryServices
     {

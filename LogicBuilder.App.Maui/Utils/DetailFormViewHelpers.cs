@@ -1,10 +1,10 @@
-﻿using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.ViewModels;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
+﻿using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.ViewModels;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
 using Microsoft.Maui.Controls;
 using System.Collections.ObjectModel;
 
-namespace Contoso.XPlatform.Utils
+namespace LogicBuilder.App.Maui.Utils
 {
     public static class DetailFormViewHelpers
     {

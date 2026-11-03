@@ -1,8 +1,8 @@
-﻿using Contoso.XPlatform.ViewModels.Validatables;
+﻿using LogicBuilder.App.Maui.ViewModels.Validatables;
 using System;
 using System.Collections.Generic;
 
-namespace Contoso.XPlatform.Validators.Rules
+namespace LogicBuilder.App.Maui.Validators.Rules
 {
     public record HasValidAgeRule : ValidationRuleBase<DateTime>
     {

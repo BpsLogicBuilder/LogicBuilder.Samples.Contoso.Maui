@@ -1,7 +1,7 @@
 using LogicBuilder.App.Utils.Interfaces;
 using Microsoft.Maui.Controls;
 
-namespace Contoso.XPlatform.Converters
+namespace LogicBuilder.App.Maui.Converters
 {
     public class ConverterFactory(ITypeHelper typeHelper, IGenericsHelpers genericsHelpers) : IConverterFactory
     {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Contoso.XPlatform.Views.Flyout"
-             xmlns:converters="clr-namespace:Contoso.XPlatform.Converters"
-             xmlns:vm="clr-namespace:Contoso.XPlatform.ViewModels"
+             x:Class="LogicBuilder.App.Maui.Views.Flyout"
+             xmlns:converters="clr-namespace:LogicBuilder.App.Maui.Converters"
+             xmlns:vm="clr-namespace:LogicBuilder.App.Maui.ViewModels"
              BackgroundColor="{DynamicResource PageBackgroundColor}"
              Padding="0,60,0,0"
              IconImageSource="hamburger.png"

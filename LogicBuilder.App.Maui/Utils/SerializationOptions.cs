@@ -4,7 +4,7 @@ using LogicBuilder.Domain.Json;
 using LogicBuilder.Expressions.Utils.Json;
 using System.Text.Json;
 
-namespace Contoso.XPlatform.Utils
+namespace LogicBuilder.App.Maui.Utils
 {
     public static class SerializationOptions
     {

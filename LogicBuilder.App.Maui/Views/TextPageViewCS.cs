@@ -1,12 +1,12 @@
-﻿using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels.TextPage;
+﻿using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels.TextPage;
 using LogicBuilder.App.Maui.Forms.Configuration.TextForm;
 using Microsoft.Maui.Controls;
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Contoso.XPlatform.Views
+namespace LogicBuilder.App.Maui.Views
 {
     public partial class TextPageViewCS : ContentPage
     {

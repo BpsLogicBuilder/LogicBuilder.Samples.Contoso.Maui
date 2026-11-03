@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
-namespace Contoso.XPlatform.ViewModels.ReadOnlys
+namespace LogicBuilder.App.Maui.ViewModels.ReadOnlys
 {
     public partial class TextFieldReadOnlyObject<T> : ReadOnlyObjectBase<T>
     {

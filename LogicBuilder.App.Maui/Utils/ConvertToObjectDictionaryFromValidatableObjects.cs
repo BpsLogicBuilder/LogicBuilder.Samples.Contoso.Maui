@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.Constants;
+using LogicBuilder.App.Maui.Constants;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Contoso.XPlatform.Utils
+namespace LogicBuilder.App.Maui.Utils
 {
     internal class ConvertToObjectDictionaryFromValidatableObjects(IDictionary<string, object?> propertiesDictionary, IMapper mapper, List<IFormItemSettingsDescriptor> fieldSettings, string? parentField = null)
     {

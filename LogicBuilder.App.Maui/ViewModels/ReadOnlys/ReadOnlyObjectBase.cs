@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
-namespace Contoso.XPlatform.ViewModels.ReadOnlys
+namespace LogicBuilder.App.Maui.ViewModels.ReadOnlys
 {
     public abstract class ReadOnlyObjectBase<T> : IReadOnly
     {

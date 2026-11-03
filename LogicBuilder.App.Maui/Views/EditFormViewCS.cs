@@ -1,9 +1,9 @@
-﻿using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Converters;
-using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels;
-using Contoso.XPlatform.ViewModels.EditForm;
-using Contoso.XPlatform.ViewModels.Validatables;
+﻿using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.Converters;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels;
+using LogicBuilder.App.Maui.ViewModels.EditForm;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
 using LogicBuilder.App.Maui.Forms.Configuration;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using Microsoft.Maui;
@@ -12,7 +12,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
-namespace Contoso.XPlatform.Views
+namespace LogicBuilder.App.Maui.Views
 {
     public partial class EditFormViewCS : ContentPage
     {

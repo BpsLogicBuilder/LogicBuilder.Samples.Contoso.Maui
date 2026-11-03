@@ -1,18 +1,21 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.Directives.Factories;
-using Contoso.XPlatform.Services;
-using Contoso.XPlatform.ViewModels;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
-using Contoso.XPlatform.ViewModels.Validatables;
+using LogicBuilder.App.Maui;
+using LogicBuilder.App.Maui.Directives;
+using LogicBuilder.App.Maui.Directives.Factories;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
-using Microsoft.Extensions.DependencyInjection;
+using LogicBuilder.App.Maui.Services;
+using LogicBuilder.App.Maui.ViewModels;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace Contoso.XPlatform.Directives
+#pragma warning disable IDE0130 // Microsoft recommended namespace for services
+namespace Microsoft.Extensions.DependencyInjection
+#pragma warning restore IDE0130 // Microsoft recommended namespace for services
 {
-    public static class DirectiveServices
+	public static class DirectiveServices
     {
         public static IServiceCollection AddDirectiveServices(this IServiceCollection services)
             => services

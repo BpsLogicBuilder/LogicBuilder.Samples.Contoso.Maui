@@ -1,8 +1,8 @@
-﻿using Contoso.XPlatform.Directives;
-using Contoso.XPlatform.Directives.Factories;
-using Contoso.XPlatform.Services;
-using Contoso.XPlatform.ViewModels.Factories;
-using Contoso.XPlatform.Views.Factories;
+﻿using LogicBuilder.App.Maui.Directives;
+using LogicBuilder.App.Maui.Directives.Factories;
+using LogicBuilder.App.Maui.Services;
+using LogicBuilder.App.Maui.ViewModels.Factories;
+using LogicBuilder.App.Maui.Views.Factories;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;
@@ -10,7 +10,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Windows.Input;
 
-namespace Contoso.XPlatform.ViewModels.ReadOnlys
+namespace LogicBuilder.App.Maui.ViewModels.ReadOnlys
 {
     public partial class FormReadOnlyObject<T> : ReadOnlyObjectBase<T>, IDisposable where T : class
     {

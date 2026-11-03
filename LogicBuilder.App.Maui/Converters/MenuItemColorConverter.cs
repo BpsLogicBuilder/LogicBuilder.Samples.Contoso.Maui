@@ -1,9 +1,9 @@
-﻿using Contoso.XPlatform.Constants;
+﻿using LogicBuilder.App.Maui.Constants;
 using Microsoft.Maui.Controls;
 using System;
 using System.Globalization;
 
-namespace Contoso.XPlatform.Converters
+namespace LogicBuilder.App.Maui.Converters
 {
     public class MenuItemColorConverter : IValueConverter
     {

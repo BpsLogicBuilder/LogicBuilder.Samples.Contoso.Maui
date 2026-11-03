@@ -1,8 +1,8 @@
-﻿using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels;
-using Contoso.XPlatform.ViewModels.DetailForm;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
+﻿using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels;
+using LogicBuilder.App.Maui.ViewModels.DetailForm;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
 using LogicBuilder.App.Maui.Forms.Configuration;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using Microsoft.Maui;
@@ -11,7 +11,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
-namespace Contoso.XPlatform.Views
+namespace LogicBuilder.App.Maui.Views
 {
     public partial class DetailFormViewCS : ContentPage
     {

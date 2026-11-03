@@ -1,8 +1,8 @@
-﻿using Contoso.XPlatform.ViewModels.ReadOnlys;
+﻿using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
 using LogicBuilder.App.Maui.Forms.Configuration.Bindings;
 using System.Collections.Generic;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public interface ICollectionCellManager
     {

@@ -1,11 +1,11 @@
-﻿using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.Validators;
-using Contoso.XPlatform.Validators.Rules;
-using Contoso.XPlatform.ViewModels;
-using Contoso.XPlatform.ViewModels.Factories;
-using Contoso.XPlatform.ViewModels.Validatables;
-using Contoso.XPlatform.ViewModels.Validatables.Factories;
+﻿using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.Validators;
+using LogicBuilder.App.Maui.Validators.Rules;
+using LogicBuilder.App.Maui.ViewModels;
+using LogicBuilder.App.Maui.ViewModels.Factories;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
+using LogicBuilder.App.Maui.ViewModels.Validatables.Factories;
 using LogicBuilder.App.Maui.Forms.Configuration;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using LogicBuilder.App.Maui.Forms.Configuration.Validation;
@@ -16,7 +16,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public class FieldsCollectionBuilder : IFieldsCollectionBuilder
     {

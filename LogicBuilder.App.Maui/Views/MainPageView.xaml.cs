@@ -1,7 +1,7 @@
 using AutoMapper;
-using Contoso.XPlatform.Services;
-using Contoso.XPlatform.ViewModels;
-using Contoso.XPlatform.Views.Factories;
+using LogicBuilder.App.Maui.Services;
+using LogicBuilder.App.Maui.ViewModels;
+using LogicBuilder.App.Maui.Views.Factories;
 using LogicBuilder.App.Maui.Business.Requests;
 using LogicBuilder.App.Maui.Business.Settings;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
-namespace Contoso.XPlatform.Views;
+namespace LogicBuilder.App.Maui.Views;
 
 public partial class MainPageView : FlyoutPage
 {

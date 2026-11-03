@@ -1,3 +1,4 @@
+* 2026-11-02 - AB#180: Update common library namesapces.
 * 2026-11-02 - AB#180: Move services, views and view models to a common library.
 * 2026-10-30 - AB#180: Move flow classes to a common library.
 * 2026-10-30 - AB#180: change log.

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Contoso.XPlatform.Utils
+namespace LogicBuilder.App.Maui.Utils
 {
     public class MultiSelectItemComparer<TElement>(List<string> keyFields) : IEqualityComparer<TElement>
     {

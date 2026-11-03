@@ -1,13 +1,13 @@
-﻿using Contoso.XPlatform.Services;
-using Contoso.XPlatform.ViewModels;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
-using Contoso.XPlatform.ViewModels.Validatables;
+﻿using LogicBuilder.App.Maui.Services;
+using LogicBuilder.App.Maui.ViewModels;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace Contoso.XPlatform.Directives.Factories
+namespace LogicBuilder.App.Maui.Directives.Factories
 {
     internal class DirectiveManagersFactory(
         Func<Type, IEnumerable<IFormField>, object, IClearIfManager> getClearIfManager,

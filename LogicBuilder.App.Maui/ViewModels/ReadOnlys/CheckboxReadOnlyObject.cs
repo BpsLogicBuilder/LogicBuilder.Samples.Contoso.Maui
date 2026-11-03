@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Contoso.XPlatform.ViewModels.ReadOnlys
+namespace LogicBuilder.App.Maui.ViewModels.ReadOnlys
 {
     public partial class CheckboxReadOnlyObject : ReadOnlyObjectBase<bool>
     {

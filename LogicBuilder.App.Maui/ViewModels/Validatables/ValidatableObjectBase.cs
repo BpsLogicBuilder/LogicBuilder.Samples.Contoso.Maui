@@ -1,4 +1,4 @@
-﻿using Contoso.XPlatform.Validators;
+﻿using LogicBuilder.App.Maui.Validators;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-namespace Contoso.XPlatform.ViewModels.Validatables
+namespace LogicBuilder.App.Maui.ViewModels.Validatables
 {
     public abstract partial class ValidatableObjectBase<T> : IValidatable
     {

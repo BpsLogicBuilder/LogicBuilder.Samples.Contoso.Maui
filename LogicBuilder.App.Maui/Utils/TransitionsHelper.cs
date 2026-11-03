@@ -2,7 +2,7 @@
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 
-namespace Contoso.XPlatform.Utils
+namespace LogicBuilder.App.Maui.Utils
 {
     internal static class TransitionsHelper
     {

@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.ViewModels.Validatables;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Contoso.XPlatform.Utils
+namespace LogicBuilder.App.Maui.Utils
 {
     public static class EntityMapper
     {

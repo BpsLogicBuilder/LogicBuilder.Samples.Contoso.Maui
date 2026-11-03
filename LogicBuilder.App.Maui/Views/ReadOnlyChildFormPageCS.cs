@@ -1,7 +1,7 @@
-﻿using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
+﻿using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
 using LogicBuilder.App.Maui.Forms.Configuration;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
@@ -9,7 +9,7 @@ using Microsoft.Maui.Graphics;
 using System;
 using System.Linq;
 
-namespace Contoso.XPlatform.Views
+namespace LogicBuilder.App.Maui.Views
 {
     public partial class ReadOnlyChildFormPageCS : ContentPage
     {

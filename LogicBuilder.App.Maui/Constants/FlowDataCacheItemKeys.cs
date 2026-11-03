@@ -1,4 +1,4 @@
-﻿namespace Contoso.XPlatform.Constants
+﻿namespace LogicBuilder.App.Maui.Constants
 {
     /// <summary>
     /// The keys match the workflow variable's member name property.

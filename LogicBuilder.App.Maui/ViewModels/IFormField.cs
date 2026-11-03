@@ -1,4 +1,4 @@
-﻿namespace Contoso.XPlatform.ViewModels
+﻿namespace LogicBuilder.App.Maui.ViewModels
 {
     public interface IFormField
     {

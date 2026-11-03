@@ -1,6 +1,6 @@
-﻿using Contoso.XPlatform.Services;
-using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels.Validatables;
+﻿using LogicBuilder.App.Maui.Services;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
 using LogicBuilder.App.Maui.Business.Requests;
 using LogicBuilder.App.Maui.Business.Settings.Screen;
 using LogicBuilder.App.Maui.Forms.Configuration;
@@ -14,7 +14,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Contoso.XPlatform.ViewModels.EditForm
+namespace LogicBuilder.App.Maui.ViewModels.EditForm
 {
     public abstract class EditFormViewModelBase(
         ScreenSettings<DataFormSettingsDescriptor> screenSettings,

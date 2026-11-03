@@ -1,9 +1,9 @@
-﻿using Contoso.XPlatform.Validators;
+﻿using LogicBuilder.App.Maui.Validators;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace Contoso.XPlatform.ViewModels.Validatables
+namespace LogicBuilder.App.Maui.ViewModels.Validatables
 {
     public interface IValidatable : INotifyPropertyChanged, IFormField
     {

@@ -1,12 +1,12 @@
-﻿using Contoso.XPlatform.Behaviours;
-using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels.SearchPage;
+﻿using LogicBuilder.App.Maui.Behaviours;
+using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels.SearchPage;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Contoso.XPlatform.Views
+namespace LogicBuilder.App.Maui.Views
 {
     public partial class SearchPageViewCS : ContentPage
     {

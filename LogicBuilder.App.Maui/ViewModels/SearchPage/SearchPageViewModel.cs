@@ -1,6 +1,6 @@
-﻿using Contoso.XPlatform.Services;
-using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
+﻿using LogicBuilder.App.Maui.Services;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
 using LogicBuilder.App.Bsl.Business.Requests;
 using LogicBuilder.App.Bsl.Business.Responses;
 using LogicBuilder.App.Maui.Business.Requests;
@@ -17,7 +17,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Contoso.XPlatform.ViewModels.SearchPage
+namespace LogicBuilder.App.Maui.ViewModels.SearchPage
 {
     public partial class SearchPageViewModel<TModel> : SearchPageViewModelBase where TModel : class
     {

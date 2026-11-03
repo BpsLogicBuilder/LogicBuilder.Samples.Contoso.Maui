@@ -1,9 +1,9 @@
-﻿using Contoso.XPlatform.ViewModels.ListPage;
+﻿using LogicBuilder.App.Maui.ViewModels.ListPage;
 using LogicBuilder.App.Maui.Business.Settings.Screen;
 using Microsoft.Maui.Controls;
 using System;
 
-namespace Contoso.XPlatform.Views.Factories
+namespace LogicBuilder.App.Maui.Views.Factories
 {
     public class ListPageFactory(
         Func<ListPageViewModelBase, ListPageViewCS> getPage,

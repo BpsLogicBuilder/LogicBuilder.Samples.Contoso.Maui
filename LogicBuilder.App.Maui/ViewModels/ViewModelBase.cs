@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Contoso.XPlatform.ViewModels
+namespace LogicBuilder.App.Maui.ViewModels
 {
     public abstract class ViewModelBase : INotifyPropertyChanged
     {

@@ -1,5 +1,5 @@
 ﻿using Akavache;
-using Contoso.XPlatform.Utils;
+using LogicBuilder.App.Maui.Utils;
 using LogicBuilder.App.Bsl.Business.Requests;
 using LogicBuilder.App.Bsl.Business.Responses;
 using LogicBuilder.App.Maui.Services;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public class HttpService(IHttpClientFactory factory, IUrlService urlService) : IHttpService
     {

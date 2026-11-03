@@ -1,7 +1,7 @@
 ﻿using LogicBuilder.App.Maui.Business.Settings;
 using System.Reactive.Subjects;
 
-namespace Contoso.XPlatform
+namespace LogicBuilder.App.Maui
 {
     public class UiNotificationService : IUiNotificationService
     {

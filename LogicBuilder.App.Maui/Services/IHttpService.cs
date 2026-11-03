@@ -2,7 +2,7 @@
 using LogicBuilder.App.Bsl.Business.Responses;
 using System.Threading.Tasks;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public interface IHttpService
     {

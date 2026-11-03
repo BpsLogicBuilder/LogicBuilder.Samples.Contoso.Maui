@@ -1,4 +1,4 @@
-﻿namespace Contoso.XPlatform.ViewModels.ReadOnlys
+﻿namespace LogicBuilder.App.Maui.ViewModels.ReadOnlys
 {
     public interface IHasItemsSourceReadOnly : IReadOnly, IHasItemsSource
     {

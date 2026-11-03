@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Directives;
-using Contoso.XPlatform.Directives.Factories;
-using Contoso.XPlatform.ViewModels;
+using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.Directives;
+using LogicBuilder.App.Maui.Directives.Factories;
+using LogicBuilder.App.Maui.ViewModels;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using LogicBuilder.Expressions.Utils.ExpressionBuilder.Lambda;
 using System;
@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     abstract public class BaseConditionalDirectiveBuilder<TConditionBase, TModel>(IDirectiveManagersFactory directiveManagersFactory, IMapper mapper, IFormGroupSettings formGroupSettings, IEnumerable<IFormField> properties, List<TConditionBase>? parentList = null, string? parentName = null) : IConditionalDirectiveBuilder<TConditionBase, TModel> where TConditionBase : ConditionBase<TModel>, new()
     {

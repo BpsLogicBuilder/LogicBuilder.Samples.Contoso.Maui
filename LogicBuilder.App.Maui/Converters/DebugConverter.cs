@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Text;
 using Microsoft.Maui.Controls;
 
-namespace Contoso.XPlatform.Converters
+namespace LogicBuilder.App.Maui.Converters
 {
     public class DebugConverter : IValueConverter
     {

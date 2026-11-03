@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Contoso.XPlatform.Constants
+namespace LogicBuilder.App.Maui.Constants
 {
     public struct FontAwesomeIcons
     {

@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.Validators;
-using Contoso.XPlatform.ViewModels.Validatables;
+using LogicBuilder.App.Maui.Validators;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
 using LogicBuilder.App.Maui.Forms.Configuration.Directives;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Contoso.XPlatform.Directives
+namespace LogicBuilder.App.Maui.Directives
 {
     internal partial class ValidateIfManager<TModel> : IValidateIfManager
     {

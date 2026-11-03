@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.ViewModels.Validatables;
+using LogicBuilder.App.Maui.Constants;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using LogicBuilder.Expressions.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public class PropertiesUpdater(IMapper mapper) : IPropertiesUpdater
     {

@@ -1,10 +1,10 @@
-﻿using Contoso.XPlatform.ViewModels.Validatables;
+﻿using LogicBuilder.App.Maui.ViewModels.Validatables;
 using LogicBuilder.App.Utils.Interfaces;
 using Microsoft.Maui.Controls;
 using System;
 using System.Globalization;
 
-namespace Contoso.XPlatform.Converters
+namespace LogicBuilder.App.Maui.Converters
 {
     public class PickerItemDisplayPathConverter(IGenericsHelpers genericsHelpers) : IValueConverter
     {

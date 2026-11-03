@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.MappingProfiles;
+using LogicBuilder.App.Maui.MappingProfiles;
 using LogicBuilder.App.Maui.AutoMapperProfiles;
 using LogicBuilder.EntityFrameworkCore.Mapping;
 using Microsoft.Extensions.Logging.Abstractions;

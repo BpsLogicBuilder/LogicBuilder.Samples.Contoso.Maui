@@ -1,8 +1,8 @@
-﻿using Contoso.XPlatform.ViewModels.Validatables;
+﻿using LogicBuilder.App.Maui.ViewModels.Validatables;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace Contoso.XPlatform.Validators.Rules
+namespace LogicBuilder.App.Maui.Validators.Rules
 {
     public record IsValidPasswordRule : ValidationRuleBase<string>
     {

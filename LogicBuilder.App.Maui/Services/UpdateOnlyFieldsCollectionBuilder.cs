@@ -1,14 +1,14 @@
-﻿using Contoso.XPlatform.ViewModels;
-using Contoso.XPlatform.ViewModels.Factories;
-using Contoso.XPlatform.ViewModels.Validatables;
-using Contoso.XPlatform.ViewModels.Validatables.Factories;
+﻿using LogicBuilder.App.Maui.ViewModels;
+using LogicBuilder.App.Maui.ViewModels.Factories;
+using LogicBuilder.App.Maui.ViewModels.Validatables;
+using LogicBuilder.App.Maui.ViewModels.Validatables.Factories;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using LogicBuilder.App.Maui.Forms.Configuration.Validation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public class UpdateOnlyFieldsCollectionBuilder(
         ICollectionBuilderFactory collectionBuilderFactory,

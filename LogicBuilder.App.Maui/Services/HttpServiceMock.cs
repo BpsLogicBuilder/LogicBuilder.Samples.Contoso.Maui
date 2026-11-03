@@ -4,7 +4,7 @@
 //using System.Collections.Generic;
 //using System.Threading.Tasks;
 //Move this to a test project
-//namespace Contoso.XPlatform.Services
+//namespace LogicBuilder.App.Maui.Services
 //{
 //    public class HttpServiceMock : IHttpService
 //    {

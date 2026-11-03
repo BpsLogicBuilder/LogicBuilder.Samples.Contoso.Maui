@@ -1,5 +1,5 @@
-﻿using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
+﻿using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
 using LogicBuilder.App.Maui.Forms.Configuration;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace Contoso.XPlatform.ViewModels
+namespace LogicBuilder.App.Maui.ViewModels
 {
     public partial class ReadOnlyControlGroupBox(IFormGroupBoxSettings groupBoxSettings) : ObservableCollection<IReadOnly>([])
     {

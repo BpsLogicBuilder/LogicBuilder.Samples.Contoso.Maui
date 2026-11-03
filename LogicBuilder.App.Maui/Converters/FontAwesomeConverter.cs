@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using Microsoft.Maui.Controls;
-using Contoso.XPlatform.Constants;
+using LogicBuilder.App.Maui.Constants;
 
-namespace Contoso.XPlatform.Converters
+namespace LogicBuilder.App.Maui.Converters
 {
     public class FontAwesomeConverter : IValueConverter
     {

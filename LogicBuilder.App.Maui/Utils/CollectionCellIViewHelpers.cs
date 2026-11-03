@@ -1,10 +1,10 @@
-﻿using Contoso.XPlatform.ViewModels.ReadOnlys;
+﻿using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
 using System;
 using System.Collections.ObjectModel;
 using Microsoft.Maui.Controls;
-using Contoso.XPlatform.Constants;
+using LogicBuilder.App.Maui.Constants;
 
-namespace Contoso.XPlatform.Utils
+namespace LogicBuilder.App.Maui.Utils
 {
     internal static class CollectionCellIViewHelpers
     {

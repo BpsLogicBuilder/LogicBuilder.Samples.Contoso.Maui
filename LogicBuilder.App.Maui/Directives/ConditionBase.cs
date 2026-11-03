@@ -2,7 +2,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace Contoso.XPlatform.Directives
+namespace LogicBuilder.App.Maui.Directives
 {
     //From DirectiveDescriptor where DirectiveDescriptor.DirectiveDefinitionDescriptor.Classname == HideIf/RelaodIf/ClearIf etc
     //Evaluator is DirectiveDescriptor.FilterLambdaOperatorDescriptor

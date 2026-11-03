@@ -1,7 +1,7 @@
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Graphics;
 
-namespace Contoso.XPlatform.Views;
+namespace LogicBuilder.App.Maui.Views;
 
 public partial class BusyIndicator : ContentPage
 {

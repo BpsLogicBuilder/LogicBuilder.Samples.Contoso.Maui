@@ -3,7 +3,7 @@ using LogicBuilder.App.Maui.Utils.Interfaces;
 using System;
 using System.Threading.Tasks;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public interface IScopedFlowManagerService : IDisposable
     {

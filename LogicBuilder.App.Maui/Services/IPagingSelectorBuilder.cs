@@ -1,7 +1,7 @@
 ﻿using LogicBuilder.Expressions.Utils.ExpressionDescriptors;
 using System.Threading.Tasks;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public interface IPagingSelectorBuilder
     {

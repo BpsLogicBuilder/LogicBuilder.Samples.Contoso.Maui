@@ -1,7 +1,7 @@
-﻿using Contoso.XPlatform.Directives;
+﻿using LogicBuilder.App.Maui.Directives;
 using System.Collections.Generic;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public interface IConditionalDirectiveBuilder<TConditionBase, TModel> : IConditionalDirectiveBuilder where TConditionBase : ConditionBase<TModel>, new()
     {

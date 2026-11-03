@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 
-namespace Contoso.XPlatform.ViewModels
+namespace LogicBuilder.App.Maui.ViewModels
 {
     public partial class FlyoutMenuItem : ViewModelBase
     {

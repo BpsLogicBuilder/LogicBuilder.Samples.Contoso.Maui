@@ -1,8 +1,8 @@
-﻿using Contoso.XPlatform.ViewModels.ReadOnlys;
+﻿using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
 using Microsoft.Maui.Controls;
 using System;
 
-namespace Contoso.XPlatform.Utils
+namespace LogicBuilder.App.Maui.Utils
 {
     public class ReadOnlyControlTemplateSelector : DataTemplateSelector
     {

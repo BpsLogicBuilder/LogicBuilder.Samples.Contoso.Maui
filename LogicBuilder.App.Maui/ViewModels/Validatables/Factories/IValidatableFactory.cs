@@ -1,10 +1,10 @@
-﻿using Contoso.XPlatform.Validators;
+﻿using LogicBuilder.App.Maui.Validators;
 using LogicBuilder.App.Maui.Forms.Configuration;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using System;
 using System.Collections.Generic;
 
-namespace Contoso.XPlatform.ViewModels.Validatables.Factories
+namespace LogicBuilder.App.Maui.ViewModels.Validatables.Factories
 {
     public interface IValidatableFactory
     {

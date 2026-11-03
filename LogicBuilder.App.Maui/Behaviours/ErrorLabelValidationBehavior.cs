@@ -1,6 +1,6 @@
 ﻿using Microsoft.Maui.Controls;
 
-namespace Contoso.XPlatform.Behaviours
+namespace LogicBuilder.App.Maui.Behaviours
 {
     public class ErrorLabelValidationBehavior : BehaviorBase<Label>
     {

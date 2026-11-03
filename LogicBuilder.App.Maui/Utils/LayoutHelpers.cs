@@ -1,4 +1,4 @@
-﻿using Contoso.XPlatform.Constants;
+﻿using LogicBuilder.App.Maui.Constants;
 using LogicBuilder.App.Maui.Forms.Configuration;
 using LogicBuilder.App.Maui.Forms.Configuration.Bindings;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Contoso.XPlatform.Utils
+namespace LogicBuilder.App.Maui.Utils
 {
     internal static class LayoutHelpers
     {

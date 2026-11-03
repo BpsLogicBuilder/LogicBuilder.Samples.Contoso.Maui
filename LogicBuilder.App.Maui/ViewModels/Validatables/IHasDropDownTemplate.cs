@@ -1,6 +1,6 @@
 using LogicBuilder.App.Maui.Forms.Configuration;
 
-namespace Contoso.XPlatform.ViewModels.Validatables
+namespace LogicBuilder.App.Maui.ViewModels.Validatables
 {
     public interface IHasDropDownTemplate
     {

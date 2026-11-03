@@ -1,4 +1,4 @@
-﻿namespace Contoso.XPlatform.Views.Factories
+﻿namespace LogicBuilder.App.Maui.Views.Factories
 {
     public interface IDetailFormFactory : IFlyoutDetailPageFactory
     {

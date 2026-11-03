@@ -1,11 +1,11 @@
-﻿using Contoso.XPlatform.Services;
+﻿using LogicBuilder.App.Maui.Services;
 using LogicBuilder.App.Maui.Forms.Configuration.Bindings;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using LogicBuilder.App.Maui.Forms.Configuration.Validation;
 using System;
 using System.Collections.Generic;
 
-namespace Contoso.XPlatform.ViewModels.Factories
+namespace LogicBuilder.App.Maui.ViewModels.Factories
 {
     internal class CollectionBuilderFactory(
         Func<Type, List<ItemBindingDescriptor>, ICollectionCellItemsBuilder> getCollectionCellItemsBuilder,

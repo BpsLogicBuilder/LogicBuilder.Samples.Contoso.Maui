@@ -1,9 +1,9 @@
-﻿using Contoso.XPlatform.ViewModels.TextPage;
+﻿using LogicBuilder.App.Maui.ViewModels.TextPage;
 using LogicBuilder.App.Maui.Business.Settings.Screen;
 using Microsoft.Maui.Controls;
 using System;
 
-namespace Contoso.XPlatform.Views.Factories
+namespace LogicBuilder.App.Maui.Views.Factories
 {
     public class TextPageFactory : ITextPageFactory
     {

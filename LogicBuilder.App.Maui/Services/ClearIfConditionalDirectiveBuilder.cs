@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.Directives;
-using Contoso.XPlatform.Directives.Factories;
-using Contoso.XPlatform.ViewModels;
+using LogicBuilder.App.Maui.Directives;
+using LogicBuilder.App.Maui.Directives.Factories;
+using LogicBuilder.App.Maui.ViewModels;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using System.Collections.Generic;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     public class ClearIfConditionalDirectiveBuilder<TModel>(
         IDirectiveManagersFactory directiveManagersFactory,

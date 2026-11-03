@@ -1,14 +1,14 @@
-﻿using Contoso.XPlatform.Directives;
-using Contoso.XPlatform.Directives.Factories;
-using Contoso.XPlatform.Services;
-using Contoso.XPlatform.Validators;
-using Contoso.XPlatform.ViewModels.Factories;
-using Contoso.XPlatform.Views.Factories;
+﻿using LogicBuilder.App.Maui.Directives;
+using LogicBuilder.App.Maui.Directives.Factories;
+using LogicBuilder.App.Maui.Services;
+using LogicBuilder.App.Maui.Validators;
+using LogicBuilder.App.Maui.ViewModels.Factories;
+using LogicBuilder.App.Maui.Views.Factories;
 using LogicBuilder.App.Maui.Forms.Configuration.DataForm;
 using System;
 using System.Collections.Generic;
 
-namespace Contoso.XPlatform.ViewModels.Validatables
+namespace LogicBuilder.App.Maui.ViewModels.Validatables
 {
     public partial class UpdateFormValidatableObject<T> : BaseFormValidatableObject<T> where T : class
     {

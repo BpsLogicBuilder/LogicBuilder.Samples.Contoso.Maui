@@ -1,6 +1,6 @@
-﻿using Contoso.XPlatform.Services;
-using Contoso.XPlatform.Utils;
-using Contoso.XPlatform.ViewModels.ReadOnlys;
+﻿using LogicBuilder.App.Maui.Services;
+using LogicBuilder.App.Maui.Utils;
+using LogicBuilder.App.Maui.ViewModels.ReadOnlys;
 using LogicBuilder.App.Maui.Business.Requests;
 using LogicBuilder.App.Maui.Business.Settings.Screen;
 using LogicBuilder.App.Maui.Forms.Configuration;
@@ -14,7 +14,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Contoso.XPlatform.ViewModels.DetailForm
+namespace LogicBuilder.App.Maui.ViewModels.DetailForm
 {
     public abstract class DetailFormViewModelBase(
         ScreenSettings<DataFormSettingsDescriptor> screenSettings,

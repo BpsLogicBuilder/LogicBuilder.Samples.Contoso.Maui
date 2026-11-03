@@ -5,7 +5,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Contoso.XPlatform.ViewModels.ListPage
+namespace LogicBuilder.App.Maui.ViewModels.ListPage
 {
     public abstract class ListPageViewModelBase : ViewModelBase, IDisposable
     {

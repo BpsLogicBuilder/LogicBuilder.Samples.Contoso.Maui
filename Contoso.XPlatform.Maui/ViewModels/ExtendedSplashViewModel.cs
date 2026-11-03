@@ -1,4 +1,5 @@
 ﻿using Contoso.XPlatform.Flow;
+using LogicBuilder.App.Maui.ViewModels;
 using LogicBuilder.App.Utils.Rules;
 using LogicBuilder.App.Utils.Rules.Interfaces;
 using LogicBuilder.RulesDirector;

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Maui.Controls;
 using System;
 
-namespace Contoso.XPlatform.Utils
+namespace LogicBuilder.App.Maui.Utils
 {
     public class MultiSelectItemTemplateSelector : DataTemplateSelector
     {

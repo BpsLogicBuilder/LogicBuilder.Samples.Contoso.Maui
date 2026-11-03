@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Contoso.XPlatform.Constants;
+using LogicBuilder.App.Maui.Constants;
 using LogicBuilder.App.Maui.Business.Requests;
 using LogicBuilder.Expressions.Utils.ExpressionDescriptors;
 using LogicBuilder.Forms.Parameters.Expressions;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
 
-namespace Contoso.XPlatform.Services
+namespace LogicBuilder.App.Maui.Services
 {
     internal class PagingSelectorBuilder(IMapper mapper, IServiceProvider serviceProvider) : IPagingSelectorBuilder
     {

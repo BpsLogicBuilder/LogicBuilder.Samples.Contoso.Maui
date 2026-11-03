@@ -1,8 +1,8 @@
-﻿using Contoso.XPlatform.ViewModels.Validatables;
+﻿using LogicBuilder.App.Maui.ViewModels.Validatables;
 using Microsoft.Maui.Controls;
 using System;
 
-namespace Contoso.XPlatform.Utils
+namespace LogicBuilder.App.Maui.Utils
 {
     public class QuestionTemplateSelector : DataTemplateSelector
     {

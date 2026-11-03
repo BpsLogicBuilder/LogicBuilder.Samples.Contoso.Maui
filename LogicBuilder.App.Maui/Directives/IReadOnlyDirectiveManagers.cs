@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Contoso.XPlatform.Directives
+namespace LogicBuilder.App.Maui.Directives
 {
     public interface IReadOnlyDirectiveManagers : IDisposable
     {

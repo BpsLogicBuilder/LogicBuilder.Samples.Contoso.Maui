@@ -1,6 +1,6 @@
-﻿using Contoso.XPlatform;
-using Contoso.XPlatform.Converters;
-using Contoso.XPlatform.Services;
+﻿using LogicBuilder.App.Maui;
+using LogicBuilder.App.Maui.Converters;
+using LogicBuilder.App.Maui.Services;
 using LogicBuilder.App.Maui.Services;
 
 #pragma warning disable IDE0130 // Microsoft recommended for service registrations

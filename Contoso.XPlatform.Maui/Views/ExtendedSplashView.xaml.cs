@@ -1,4 +1,5 @@
 using Contoso.XPlatform.ViewModels;
+using LogicBuilder.App.Maui.Views;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;
