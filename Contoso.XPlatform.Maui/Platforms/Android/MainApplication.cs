@@ -9,13 +9,8 @@ using System;
 namespace Contoso.XPlatform
 {
     [Application]
-    public class MainApplication : MauiApplication
+    public class MainApplication(IntPtr handle, JniHandleOwnership ownership) : MauiApplication(handle, ownership)
     {
-        public MainApplication(IntPtr handle, JniHandleOwnership ownership)
-            : base(handle, ownership)
-        {
-        }
-
         protected override MauiApp CreateMauiApp()
         {
             MauiApp mauiApp = MauiProgram.CreateMauiApp();
@@ -23,7 +18,7 @@ namespace Contoso.XPlatform
             return mauiApp;
         }
 
-        private void ConfigureServices(IServiceCollection services)
+        private static void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IAppLogger, AppLogger>();
         }

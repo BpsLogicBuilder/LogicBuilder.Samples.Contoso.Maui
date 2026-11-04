@@ -2,7 +2,7 @@
 using Akavache.Sqlite3;
 using Akavache.SystemTextJson;
 using Contoso.XPlatform.Constants;
-using Contoso.XPlatform.Directives;
+using LogicBuilder.App.Maui.Constants;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui.Controls.Hosting;
@@ -10,7 +10,8 @@ using Microsoft.Maui.Devices;
 using Microsoft.Maui.Hosting;
 using Splat.Builder;
 using System;
-
+using System.Runtime.CompilerServices;
+[assembly: InternalsVisibleTo("Contoso.XPlatform.Maui.Test")]
 namespace Contoso.XPlatform
 {
     public static class MauiProgram
@@ -47,7 +48,7 @@ namespace Contoso.XPlatform
             var configBuilder = new ConfigurationBuilder();
             if (stream != null)
                 configBuilder.AddJsonStream(stream);
-            IConfiguration configuration = configBuilder.Build();
+            configuration = configBuilder.Build();
             builder.Configuration.AddConfiguration(configuration);
 
             AppBuilder.CreateSplatBuilder()
@@ -63,6 +64,8 @@ namespace Contoso.XPlatform
             
         }
 
+        static IConfiguration? configuration;
+
         public static void Init(Action<IServiceCollection> platformConfigurationServices)
         {
             var services = new ServiceCollection();
@@ -75,9 +78,10 @@ namespace Contoso.XPlatform
 
         private static void ConfigureServices(ServiceCollection services)
         {
+            if (configuration is not null)
+                services.AddSingleton(configuration);
             services
-                .AddServices()
-                .AddDirectiveServices()
+                .AddLogicBuilderMauiServices()
                 .AddFlowServices()
                 /*To use the extended splash (useful for low powered devices)
                  * 1) Comment out .AddRulesCache()
@@ -87,6 +91,7 @@ namespace Contoso.XPlatform
                 .AddRulesCache()
                 .AddViewModels()
                 .AddViews();
+                
         }
     }
 }
