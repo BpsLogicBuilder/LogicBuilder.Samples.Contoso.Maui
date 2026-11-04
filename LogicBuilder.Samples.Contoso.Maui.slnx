@@ -4,7 +4,6 @@
     <Project Path="Contoso.XPlatform.Maui/Contoso.XPlatform.Maui.csproj">
       <Deploy Solution="Debug|*" />
     </Project>
-    <Project Path="LogicBuilder.App.Maui/LogicBuilder.App.Maui.csproj" Id="059c694b-9ef9-4755-8f3d-aa1624312b0c" />
   </Folder>
   <Folder Name="/Business/">
     <Project Path="Contoso.Domain/Contoso.Domain.csproj" />
@@ -13,7 +12,7 @@
     <Project Path="Contoso.Data/Contoso.Data.csproj" />
   </Folder>
   <Folder Name="/Test/">
-    <Project Path="LogicBuilder.App.Maui.Test/LogicBuilder.App.Maui.Test.csproj" Id="7284c41d-fa20-4c4d-b481-bc7bfda12da0" />
+    <Project Path="Contoso.XPlatform.Maui.Test/Contoso.XPlatform.Maui.Test.csproj" Id="9b6be358-069d-486b-853c-57094871c74b" />
   </Folder>
   <Folder Name="/_Solution Items/">
     <File Path="CHANGELOG.md" />

@@ -72,6 +72,7 @@
 		<PackageReference Include="Akavache.Sqlite3" Version="13.0.0" />
 		<PackageReference Include="Akavache.SystemTextJson" Version="13.0.0" />
 		<PackageReference Include="LogicBuilder.App.Bsl.Business" Version="1.0.3" />
+		<PackageReference Include="LogicBuilder.App.Maui" Version="1.0.1" />
 		<PackageReference Include="LogicBuilder.App.Maui.Forms.Configuration" Version="1.1.0" />
 		<PackageReference Include="LogicBuilder.EntityFrameworkCore" Version="8.0.3" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.14" />
@@ -84,7 +85,6 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Contoso.XPlatform.Flow\Contoso.XPlatform.Flow.csproj" />
-		<ProjectReference Include="..\LogicBuilder.App.Maui\LogicBuilder.App.Maui.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

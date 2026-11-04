@@ -10,7 +10,8 @@ using Microsoft.Maui.Devices;
 using Microsoft.Maui.Hosting;
 using Splat.Builder;
 using System;
-
+using System.Runtime.CompilerServices;
+[assembly: InternalsVisibleTo("Contoso.XPlatform.Maui.Test")]
 namespace Contoso.XPlatform
 {
     public static class MauiProgram
