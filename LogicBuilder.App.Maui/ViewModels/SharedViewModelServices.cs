@@ -21,9 +21,9 @@ using System.Reflection;
 namespace Microsoft.Extensions.DependencyInjection
 #pragma warning restore IDE0130 // Microsoft recommended namespace for services
 {
-    public static class CommonViewModelServices
+    public static class SharedViewModelServices
     {
-        public static IServiceCollection AddCommonViewModels(this IServiceCollection services) 
+        public static IServiceCollection AddSharedViewModels(this IServiceCollection services) 
             => services
                 .AddTransient<MainPageViewModel>()
                 .AddTransient<ICollectionBuilderFactory, CollectionBuilderFactory>()
@@ -83,8 +83,6 @@ namespace Microsoft.Extensions.DependencyInjection
                         if (screenSettings is not ScreenSettings<ListFormSettingsDescriptor> listFormSettings)
                             throw new ArgumentException($"{nameof(screenSettings)}: {{E418F32B-6D8B-44AF-BBC5-1BCBC14642C6}}");
 
-                        Type entityType = GetEntityType(listFormSettings.Settings.ModelType);
-                        Type genricListPage = typeof(ListPageViewModel<>).MakeGenericType(entityType);
                         return (ListPageViewModelBase)(
                             Activator.CreateInstance
                             (

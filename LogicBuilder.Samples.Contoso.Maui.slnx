@@ -12,6 +12,9 @@
   <Folder Name="/EF/">
     <Project Path="Contoso.Data/Contoso.Data.csproj" />
   </Folder>
+  <Folder Name="/Test/">
+    <Project Path="LogicBuilder.App.Maui.Test/LogicBuilder.App.Maui.Test.csproj" Id="7284c41d-fa20-4c4d-b481-bc7bfda12da0" />
+  </Folder>
   <Folder Name="/_Solution Items/">
     <File Path="CHANGELOG.md" />
     <File Path="README.md" />

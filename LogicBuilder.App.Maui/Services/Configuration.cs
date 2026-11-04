@@ -1,7 +1,6 @@
 ﻿using LogicBuilder.App.Maui;
 using LogicBuilder.App.Maui.Converters;
 using LogicBuilder.App.Maui.Services;
-using LogicBuilder.App.Maui.Services;
 
 #pragma warning disable IDE0130 // Microsoft recommended for service registrations
 namespace Microsoft.Extensions.DependencyInjection
@@ -9,7 +8,7 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class Configuration
     {
-        public static IServiceCollection AddServices(this IServiceCollection services)
+        public static IServiceCollection AddLogicBuilderMauiServices(this IServiceCollection services)
         {
             return services
                     .AddSingleton<IUiNotificationService, UiNotificationService>()
@@ -26,7 +25,10 @@ namespace Microsoft.Extensions.DependencyInjection
                     .AddAppUtilsServices()
                     .AddTransient<IUrlService, UrlService>()
                     .AddTransient<IPagingSelectorBuilder, PagingSelectorBuilder>()/*must be transient - should not create scoped service from a singleton context*/
-                    .AddTransient<IScopedFlowManagerService, ScopedFlowManagerService>();
+                    .AddTransient<IScopedFlowManagerService, ScopedFlowManagerService>()
+                    .AddDirectiveServices()
+                    .AddSharedViewModels()
+                    .AddSharedViews();
         }
     }
 }

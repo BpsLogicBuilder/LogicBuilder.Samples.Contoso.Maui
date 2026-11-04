@@ -14,9 +14,9 @@ using System;
 namespace Microsoft.Extensions.DependencyInjection
 #pragma warning restore IDE0130 // Microsoft recommended namespace for service registrations
 {
-    public static class CommonViewServices
+    public static class SharedViewServices
     {
-        public static IServiceCollection AddCommonViews(this IServiceCollection services)
+        public static IServiceCollection AddSharedViews(this IServiceCollection services)
         {
             return services
                 .AddTransient<MainPageView>()

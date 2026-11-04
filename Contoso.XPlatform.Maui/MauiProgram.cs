@@ -80,8 +80,7 @@ namespace Contoso.XPlatform
             if (configuration is not null)
                 services.AddSingleton(configuration);
             services
-                .AddServices()
-                .AddDirectiveServices()
+                .AddLogicBuilderMauiServices()
                 .AddFlowServices()
                 /*To use the extended splash (useful for low powered devices)
                  * 1) Comment out .AddRulesCache()
@@ -90,9 +89,8 @@ namespace Contoso.XPlatform
                  */
                 .AddRulesCache()
                 .AddViewModels()
-                .AddCommonViewModels()
-                .AddViews()
-                .AddCommonViews();
+                .AddViews();
+                
         }
     }
 }

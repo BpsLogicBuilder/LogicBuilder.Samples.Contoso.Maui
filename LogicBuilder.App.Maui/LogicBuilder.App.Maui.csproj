@@ -20,7 +20,6 @@
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.14" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.120" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.120" />
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
 		<PackageReference Include="Polly" Version="8.9.0" />
 		<PackageReference Include="System.Reactive" Version="7.0.0" />
 	</ItemGroup>
